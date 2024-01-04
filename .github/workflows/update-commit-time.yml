@@ -16,13 +16,9 @@ jobs:
       - name: Update Commit Time
         run: |
           current_content=$(cat index.html)
-
           current_date=$(date +'%Y-%m-%d %H:%M:%S')
-
-          new_content="<p id=\"date\">Test Results Date: $current_date</p>"
-
-          updated_content="$current_content\n$new_content"
-
+          new_content="<h1 style=\"text-align: center\">QA Automation</h1>\n<p id=\"date\">Test Results Date: $current_date</p>"
+          updated_content="${current_content/<h1 style=\"text-align: center\">QA Automation<\/h1>/$new_content}"
           echo -e "$updated_content" > index.html
 
           git config --global user.name 'GitHub Actions'
