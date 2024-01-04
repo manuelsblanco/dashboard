@@ -23,22 +23,5 @@ Promise.all(fetchPromises)
             document.getElementById(`skipped-${key}`).textContent = skipped;
         });
     });
-document.addEventListener("DOMContentLoaded", function() {
-    var elementoFecha = document.getElementById("date");
 
-    var fechaActual = new Date();
-
-    // Obtén los componentes de la fecha que deseas mostrar
-    var dia = fechaActual.getDate();
-    var mes = fechaActual.toLocaleString('default', { month: 'short' }); // Abreviatura del mes
-    var año = fechaActual.getFullYear();
-    var hora = fechaActual.getHours();
-    var minutos = fechaActual.getMinutes();
-    var segundos = fechaActual.getSeconds();
-
-    // Formatea la fecha como deseas
-    var fechaFormateada = "Tests Results " + dia + " " + mes + " " + año + " " + hora + ":" + minutos + ":" + segundos;
-
-    elementoFecha.textContent = fechaFormateada;
-});
 
