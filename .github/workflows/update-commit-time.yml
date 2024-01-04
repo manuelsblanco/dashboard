@@ -13,18 +13,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Set up Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
       - name: Update Commit Time
         run: |
           current_content=$(cat index.html)
-
-          updated_content="${current_content//<p id=\"date\">[^<]*<\/p>/}"
-
           current_date=$(date +'%Y-%m-%d %H:%M:%S')
           new_content="<h1 style=\"text-align: center\">QA Automation</h1>\n<p id=\"date\">Test Results Date: $current_date</p>"
-          updated_content="${updated_content/<h1 style=\"text-align: center\">QA Automation<\/h1>/$new_content}"
-
-          updated_content=$(echo -e "$updated_content" | sed 's/ebw\.html/EBW QA Automation Results/g')
-
+          updated_content="${current_content/<h1 style=\"text-align: center\">QA Automation<\/h1>/$new_content}"
           echo -e "$updated_content" > index.html
 
           git config --global user.name 'GitHub Actions'
@@ -32,7 +31,6 @@ jobs:
           git add index.html
           git commit -m "Update last commit date [skip ci]"
           git push
-      
 
       - name: Update chz.html
         run: |
