@@ -1,0 +1,61 @@
+name: Update Commit Time and HTML Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-commit-time-and-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update Commit Time
+        run: |
+          current_content=$(cat index.html)
+          current_date=$(date +'%m-%d-%Y %H:%M:%S')
+          new_content="<h1 style=\"text-align: center\">QA Automation</h1>\n<p id=\"date\">Test Results Date: $current_date</p>"
+          updated_content="${current_content/<h1 style=\"text-align: center\">QA Automation<\/h1>/$new_content}"
+          echo -e "$updated_content" > index.html
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add index.html
+          git commit -m "Update last commit date [skip ci]"
+          git push
+
+      - name: Update chz.html
+        run: |
+          sed -i 's/chz.html/Cheezburger QA Automation Results/g' chz.html
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add chz.html
+          git commit -m "Update chz.html [skip ci]"
+          git push
+
+      - name: Update ebw.html
+        run: |
+          sed -i 's/ebw.html/EBW QA Automation Results/g' ebw.html
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add ebw.html
+          git commit -m "Update ebw.html [skip ci]"
+          git push
+
+      - name: Update HTML Files
+        run: |
+          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' chz.html
+          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' ebw.html
+          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' kym.html
+          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' crd.html
+          
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add chz.html ebw.html kym.html crd.html
+          git commit -m "Add favicon link to HTML files [skip ci]"
+          git push
