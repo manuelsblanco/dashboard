@@ -1,7 +1,5 @@
-// Un array con los nombres de los archivos o las URL que desees leer.
-const fileNames = ['chz.html', 'ebw.html', 'cracked.html', 'kym.html'];
+const fileNames = ['chz.html', 'ebw.html', 'crd.html', 'kym.html'];
 
-// Utiliza la función map para crear un nuevo array de Promesas que fetch cada archivo
 const fetchPromises = fileNames.map(fileName => fetch(fileName).then(response => response.text()));
 
 Promise.all(fetchPromises)

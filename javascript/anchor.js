@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById("EBW-destination").scrollIntoView({behavior: "smooth"});
     });
 
-    // Para cracked.html
+    // Para crd.html
     document.getElementById("cracked-results").addEventListener("click", function () {
         document.getElementById("CRACKED-destination").scrollIntoView({behavior: "smooth"});
     });

@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    const fileNames = ['chz.html', 'ebw.html', 'cracked.html', 'kym.html'];
+    const fileNames = ['chz.html', 'ebw.html', 'crd.html', 'kym.html'];
 
     Promise.all(fileNames.map(filename =>
         fetch(filename).then(response => response.text())
