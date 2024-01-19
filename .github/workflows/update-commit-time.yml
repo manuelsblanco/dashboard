@@ -47,15 +47,3 @@ jobs:
           git commit -m "Update ebw.html [skip ci]"
           git push
 
-      - name: Update HTML Files
-        run: |
-          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' chz.html
-          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' ebw.html
-          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' kym.html
-          sed -i '/<head>/a <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">' crd.html
-          
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add chz.html ebw.html kym.html crd.html
-          git commit -m "Add favicon link to HTML files [skip ci]"
-          git push
