@@ -11,8 +11,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 
     // Para crd.html
-    document.getElementById("cracked-results").addEventListener("click", function () {
-        document.getElementById("CRACKED-destination").scrollIntoView({behavior: "smooth"});
+    document.getElementById("crd-results").addEventListener("click", function () {
+        document.getElementById("CRD-destination").scrollIntoView({behavior: "smooth"});
     });
 
     // Para kym.html
