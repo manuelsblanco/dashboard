@@ -63,3 +63,11 @@ jobs:
             ./audit-ebw-mobile.html
             ./audit-kym-desktop.html
             ./audit-kym-mobile.html
+
+      - name: Commit and Push Results
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Lighthouse automation results Date $(date +' ' +'%m/%d/%Y')"
+          git push
