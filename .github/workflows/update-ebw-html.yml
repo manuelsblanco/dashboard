@@ -8,6 +8,7 @@ on:
 jobs:
   update-ebw-html:
     runs-on: ubuntu-latest
+    needs: update-chz-html
 
     steps:
       - name: Checkout Repository
