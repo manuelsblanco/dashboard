@@ -19,7 +19,7 @@ jobs:
           node-version: '14'
 
       - name: Install Lighthouse
-        run: npm install -g lighthouse
+        run: npm install -g lighthouse@7.2.0 puppeteer@7.1.0
 
       - name: Run Lighthouse Audit - CHZ Desktop
         run: |
