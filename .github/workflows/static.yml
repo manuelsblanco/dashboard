@@ -36,6 +36,8 @@ jobs:
           git add chz.html
           git commit -m "Update chz.html [skip ci]"
           git push
+          continue-on-error: true
+
 
       - name: Update ebw.html
         run: |
@@ -46,4 +48,6 @@ jobs:
           git add ebw.html
           git commit -m "Update ebw.html [skip ci]"
           git push
+          continue-on-error: true
+
 
