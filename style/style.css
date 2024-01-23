@@ -1,9 +1,13 @@
-#results td {
-    text-align: center;
+body {
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-#brands td {
+table {
     text-align: center;
+    width: 100%;
 }
 
 #chz-results:hover,
@@ -12,10 +16,6 @@
 #kym-results:hover {
     transform: scale(1.1);
     transition: transform 1s ease;
-}
-
-body {
-    font-family: monospace;
 }
 
 .logo-image {
@@ -40,4 +40,59 @@ body {
 #CRACKED-destination,
 #KYM-destination {
     margin: 500px;
+}
+
+@media (max-width: 600px) {
+    .logo-image {
+        width: 100%;
+    }
+
+    #brands, #results, #lighthouse, thead, tbody, th, td, tr {
+        display: block;
+    }
+}
+
+#lighthouse{
+    margin: 40px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a[href="#title-lighthouse"] {
+    text-decoration: none;
+}
+
+a[href="#title-lighthouse"]:visited {
+    color: inherit;
+}
+
+a[href="#title-lighthouse"]:active {
+    color: inherit;
+}
+
+.no-style {
+    text-decoration: none;
+    color: inherit;
+}
+
+.no-style:visited,
+.no-style:active {
+    color: inherit;
+}
+
+#summary {
+    text-align: left;
+    margin-left: 0;
+    width: auto;
+}
+
+#summary h3,
+#summary p {
+    text-align: left;
+}
+.centered-text {
+    text-align: center;
+    width: 100%;
 }
