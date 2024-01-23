@@ -49,3 +49,17 @@ jobs:
 
       - name: Run Lighthouse Audit - KYM Mobile
         run: lighthouse https://knowyourmeme.com/ --output html --output-path=./audit-kym-mobile.html --form-factor mobile --no-sandbox --chrome-flags="--headless"
+
+      - name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: lighthouse-results
+          path: |
+            ./audit-chz-desktop.html
+            ./audit-chz-mobile.html
+            ./audit-crd-desktop.html
+            ./audit-crd-mobile.html
+            ./audit-ebw-desktop.html
+            ./audit-ebw-mobile.html
+            ./audit-kym-desktop.html
+            ./audit-kym-mobile.html
