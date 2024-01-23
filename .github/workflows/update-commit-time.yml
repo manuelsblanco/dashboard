@@ -1,4 +1,4 @@
-name: Update Commit Time and HTML Files
+name: Update Commit Time
 
 on:
   push:
@@ -6,35 +6,12 @@ on:
       - main
 
 jobs:
-  update-commit-time-and-html:
+  update-commit-time:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
-
-      - name: Update chz.html
-        run: |
-          sed -i 's/chz.html/Cheezburger QA Automation Results/g' chz.html
-
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add chz.html
-          git commit -m "Update chz.html [skip ci]"
-          git push
-          continue-on-error: true
-
-
-      - name: Update ebw.html
-        run: |
-          sed -i 's/ebw.html/EBW QA Automation Results/g' ebw.html
-
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add ebw.html
-          git commit -m "Update ebw.html [skip ci]"
-          git push
-          continue-on-error: true
 
       - name: Update Commit Time
         run: |
@@ -50,5 +27,3 @@ jobs:
           git commit -m "Update last commit date [skip ci]"
           git push
           continue-on-error: true
-
-
