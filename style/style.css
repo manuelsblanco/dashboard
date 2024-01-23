@@ -114,3 +114,6 @@ a[href="#title-lighthouse"]:active {
     font-weight: bold;
     display: inline-block;
 }
+.emoji-link {
+    font-size: 3em;
+}
