@@ -1,30 +1,15 @@
-# QA Automation
+# Literally QA Automation Results
 
-QA Automation is a project focused on automating web tests using Selenium and Pytest for Literally websites.
+This repository, **literally-qa-automation-results**, is dedicated to storing and displaying the results of automated tests conducted using Selenium and Pytest for Literally websites.
 
-## Purpose
+## Overview
 
-This project was created to enhance the quality of the involved websites using automated testing, testing titles, texts, advertisements, redirections and functions such as login or file upload.
+The tests executed with Selenium and Pytest focus on ensuring the quality and functionality of Literally websites. These automated tests cover a range of aspects, including checking titles, texts, advertisements, redirections, and essential functions like login or file upload.
 
-## Installation
+## Result Storage
 
-Prior to using this, ensure you have Python, Pytest, and Selenium installed. This project is primarily used to run the 'pytest' command to perform automated tests and observe their execution.
+The outcomes of these automated tests are saved in HTML files, and they are uploaded to this repository on a daily basis. You can view the test results by visiting the following URL: [literally-qa-automation-results] (https://cheezburger.github.io/literally-qa-automation-results/)
 
 ## Usage
 
-This repository is used predominantly to display daily results of the test executions
-
-## Contributing
-
-No direct contributions to this project, but we welcome you to write automated tests in the other Literally QA projects.
-
-## License
-
-This project is not currently under any license.
-
-## Reporting Issues
-
-You can report any problems or bugs by creating an issue in the repository.
-
-## Contact
-For any questions or suggestions you may have about the project, you can reach out to me via email manuel@literally.media
+This repository serves as a centralized location to showcase the daily results of the automated tests.
