@@ -104,15 +104,12 @@ a[href="#title-lighthouse"]:active {
     align-items: center;
     justify-content: center;
 }
-.logo-and-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 #title-lighthouse{
     font-size: 1.5em;
     font-weight: bold;
     display: inline-block;
+    padding-top: 70px;
+    margin-top: -70px;
 }
 .emoji-link {
     font-size: 3em;
