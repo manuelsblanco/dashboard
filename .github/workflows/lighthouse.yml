@@ -18,37 +18,46 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install Lighthouse
-        run: npm install -g lighthouse@7.2.0 puppeteer@7.1.0
+      - name: Install Lighthouse and Puppeteer
+        run: |
+          npm install -g lighthouse@7.2.0 puppeteer@7.1.0 puppeteer-core
 
       - name: Run Lighthouse Audit - CHZ Desktop
         run: |
-          lighthouse https://www.cheezburger.com/ --output html --preset=desktop --output-path=./audit-chz-desktop.html
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://www.cheezburger.com/ --output html --preset=desktop --output-path=./audit-chz-desktop.html --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - CHZ Mobile
         run: |
-          lighthouse https://www.cheezburger.com/ --output html --output-path=./audit-chz-mobile.html --form-factor mobile
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://www.cheezburger.com/ --output html --output-path=./audit-chz-mobile.html --form-factor mobile --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - CRD Desktop
         run: |
-          lighthouse https://www.cracked.com/ --output html --preset=desktop --output-path=./audit-crd-desktop.html
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://www.cracked.com/ --output html --preset=desktop --output-path=./audit-crd-desktop.html --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - CRD Mobile
         run: |
-          lighthouse https://www.cracked.com/ --output html --output-path=./audit-crd-mobile.html --form-factor mobile
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://www.cracked.com/ --output html --output-path=./audit-crd-mobile.html --form-factor mobile --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - EBW Desktop
         run: |
-          lighthouse https://www.ebaumsworld.com/ --output html --preset=desktop --output-path=./audit-ebw-desktop.html
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://www.ebaumsworld.com/ --output html --preset=desktop --output-path=./audit-ebw-desktop.html --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - EBW Mobile
         run: |
-          lighthouse https://www.ebaumsworld.com/ --output html --output-path=./audit-ebw-mobile.html --form-factor mobile
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://www.ebaumsworld.com/ --output html --output-path=./audit-ebw-mobile.html --form-factor mobile --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - KYM Desktop
         run: |
-          lighthouse https://knowyourmeme.com/ --output html --preset=desktop --output-path=./audit-kym-desktop.html
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://knowyourmeme.com/ --output html --preset=desktop --output-path=./audit-kym-desktop.html --chrome-path="$CHROME_PATH"
 
       - name: Run Lighthouse Audit - KYM Mobile
         run: |
-          lighthouse https://knowyourmeme.com/ --output html --output-path=./audit-kym-mobile.html --form-factor mobile
+          export CHROME_PATH="$(npm bin)/puppeteer-core"
+          lighthouse https://knowyourmeme.com/ --output html --output-path=./audit-kym-mobile.html --form-factor mobile --chrome-path="$CHROME_PATH"
