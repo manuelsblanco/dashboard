@@ -25,7 +25,7 @@ jobs:
           git config --global user.email 'actions@github.com'
           git add index.html
           git commit -m "Update last commit date [skip ci]"
-          git push
+          git push -f
         continue-on-error: true
 
   update-chz-html:
@@ -44,7 +44,7 @@ jobs:
           git config --global user.email 'actions@github.com'
           git add chz.html
           git commit -m "Update chz.html [skip ci]"
-          git push
+          git push -f
         continue-on-error: true
 
   update-ebw-html:
@@ -63,5 +63,5 @@ jobs:
           git config --global user.email 'actions@github.com'
           git add ebw.html
           git commit -m "Update ebw.html [skip ci]"
-          git push
+          git push -f
         continue-on-error: true
