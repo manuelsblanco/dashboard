@@ -28,7 +28,7 @@ jobs:
           git push -f
         continue-on-error: true
 
-  update-chz-html:
+  update-files:
     runs-on: ubuntu-latest
     needs: set-commit-time
 
@@ -36,32 +36,30 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Update chz.html
+      - name: Update HTML Files
         run: |
-          sed -i 's/chz.html/Cheezburger QA Automation Results/g' chz.html
+          files=(
+            audit-chz-desktop.html
+            audit-chz-mobile.html
+            audit-crd-desktop.html
+            audit-crd-mobile.html
+            audit-ebw-desktop.html
+            audit-ebw-mobile.html
+            audit-kym-desktop.html
+            audit-kym-mobile.html
+            chz.html
+            crd.html
+            ebw.html
+            kym.html
+          )
 
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add chz.html
-          git commit -m "Update chz.html [skip ci]"
-          git push -f
-        continue-on-error: true
+          for file in "${files[@]}"; do
+            sed -i '0,/<head>/s/<head>/<head>\n    <link rel="icon" href="https:\/\/literally.media\/wp-content\/uploads\/2023\/10\/image-18.png" type="image\/x-icon">/' $file
 
-  update-ebw-html:
-    runs-on: ubuntu-latest
-    needs: update-chz-html
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Update ebw.html
-        run: |
-          sed -i 's/ebw.html/EBW QA Automation Results/g' ebw.html
-
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add ebw.html
-          git commit -m "Update ebw.html [skip ci]"
-          git push -f
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'actions@github.com'
+            git add $file
+            git commit -m "Update $file [skip ci]"
+            git push -f
+          done
         continue-on-error: true
