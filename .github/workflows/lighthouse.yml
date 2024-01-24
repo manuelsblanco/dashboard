@@ -28,27 +28,35 @@ jobs:
 
       - name: Run Lighthouse Audit - CHZ Desktop
         run: lighthouse https://www.cheezburger.com/ --output html --preset=desktop --output-path=./audit-chz-desktop.html --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - CHZ Mobile
         run: lighthouse https://www.cheezburger.com/ --output html --output-path=./audit-chz-mobile.html --form-factor mobile --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - CRD Desktop
         run: lighthouse https://www.cracked.com/ --output html --preset=desktop --output-path=./audit-crd-desktop.html --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - CRD Mobile
         run: lighthouse https://www.cracked.com/ --output html --output-path=./audit-crd-mobile.html --form-factor mobile --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - EBW Desktop
         run: lighthouse https://www.ebaumsworld.com/ --output html --preset=desktop --output-path=./audit-ebw-desktop.html --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - EBW Mobile
         run: lighthouse https://www.ebaumsworld.com/ --output html --output-path=./audit-ebw-mobile.html --form-factor mobile --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - KYM Desktop
         run: lighthouse https://knowyourmeme.com/ --output html --preset=desktop --output-path=./audit-kym-desktop.html --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Run Lighthouse Audit - KYM Mobile
         run: lighthouse https://knowyourmeme.com/ --output html --output-path=./audit-kym-mobile.html --form-factor mobile --no-sandbox --chrome-flags="--headless"
+        continue-on-error: true
 
       - name: Upload Lighthouse Artifacts
         uses: actions/upload-artifact@v2
@@ -69,5 +77,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add .
-          git commit -m "Lighthouse automation results Date $(date +' ' +'%m/%d/%Y')"
+          git commit -m "Lighthouse today's automation results"
           git push
