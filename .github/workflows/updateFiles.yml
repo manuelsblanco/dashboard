@@ -36,17 +36,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Wait for Lighthouse CI completion
+        run: |
+          echo "Waiting for Lighthouse CI completion..."
+          sleep 300
+        continue-on-error: true
+
       - name: Update HTML Files
         run: |
           files=(
-            audit-chz-desktop.html
-            audit-chz-mobile.html
-            audit-crd-desktop.html
-            audit-crd-mobile.html
-            audit-ebw-desktop.html
-            audit-ebw-mobile.html
-            audit-kym-desktop.html
-            audit-kym-mobile.html
             chz.html
             crd.html
             ebw.html
