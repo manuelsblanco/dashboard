@@ -1,4 +1,5 @@
 const fileNames = ['pytest/chz.html', 'pytest/ebw.html', 'pytest/crd.html', 'pytest/kym.html'];
+const fileNames2 = ['chz.html', 'ebw.html', 'crd.html', 'kym.html'];
 
 const fetchPromises = fileNames.map(fileName => fetch(fileName).then(response => response.text()));
 
@@ -18,7 +19,7 @@ Promise.all(fetchPromises)
             const skipped = skippedElement ? parseInt(skippedElement.textContent.match(/\d+/)[0], 10) : 0;
             const xfailed = xfailedElement ? parseInt(xfailedElement.textContent.match(/\d+/)[0], 10) : 0;
 
-            const key = fileNames[index].split('.')[0].toUpperCase();
+            const key = fileNames2[index].split('.')[0].toUpperCase();
 
             document.getElementById(`totalTest-${key}`).textContent = failed + passed + skipped + xfailed;
             document.getElementById(`passed-${key}`).textContent = passed;
