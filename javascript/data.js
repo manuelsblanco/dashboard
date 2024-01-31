@@ -1,4 +1,4 @@
-const fileNames = ['chz.html', 'ebw.html', 'crd.html', 'kym.html'];
+const fileNames = ['pytest/chz.html', 'pytest/ebw.html', 'pytest/crd.html', 'pytest/kym.html'];
 
 const fetchPromises = fileNames.map(fileName => fetch(fileName).then(response => response.text()));
 
