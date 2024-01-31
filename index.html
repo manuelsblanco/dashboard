@@ -3,11 +3,6 @@
 <head>
     <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript" src="javascript/charts.js"></script>
-    <script type="text/javascript" src="javascript/anchor.js"></script>
-    <script type="text/javascript" src="javascript/data.js"></script>
-    <script type="text/javascript" src="javascript/columns.js"></script>
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <meta charset="UTF-8">
     <title>QA Automation</title>
@@ -87,31 +82,56 @@
         </td>
     </tr>
     <tr>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-chz-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-chz-mobile.html">📱</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-ebw-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-ebw-mobile.html">📱</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-crd-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-crd-mobile.html">📱</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-kym-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="lighthouse/audit-kym-mobile.html">📱</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-chz-desktop.report.html">🖥</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-chz-mobile.report.html">📱</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-ebw-desktop.report.html">🖥</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-ebw-mobile.report.html">📱</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-crd-desktop.report.html">🖥</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-crd-mobile.report.html">📱</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-kym-desktop.report.html">🖥</a></td>
+        <td><a class="no-style emoji-link" href="lighthouse/audit-kym-mobile.report.html">📱</a></td>
+    </tr>
+    <tr>
+    <td><label>Performance </label><label id="chzDesktopP"></label></td>
+    <td><label>Performance </label><label id="chzMobileP"></label></td>
+    <td><label>Performance </label><label id="ebwDesktopP"></label></td>
+    <td><label>Performance </label><label id="ebwMobileP"></label></td>
+    <td><label>Performance </label><label id="crdDesktopP"></label></td>
+    <td><label>Performance </label><label id="crdMobileP"></label></td>
+    <td><label>Performance </label><label id="kymDesktopP"></label></td>
+    <td><label>Performance </label><label id="kymMobileP"></label></td>
+</tr>
+    <tr>
+        <td><label>Accessibility </label><label id="chzDesktopA"></label></td>
+        <td><label>Accessibility </label><label id="chzMobileA"></label></td>
+        <td><label>Accessibility </label><label id="ebwDesktopA"></label></td>
+        <td><label>Accessibility </label><label id="ebwMobileA"></label></td>
+        <td><label>Accessibility </label><label id="crdDesktopA"></label></td>
+        <td><label>Accessibility </label><label id="crdMobileA"></label></td>
+        <td><label>Accessibility </label><label id="kymDesktopA"></label></td>
+        <td><label>Accessibility </label><label id="kymMobileA"></label></td>
+    </tr>
+    <tr>
+        <td><label>Best Practices </label><label id="chzDesktopBP"></label></td>
+        <td><label>Best Practices </label><label id="chzMobileBP"></label></td>
+        <td><label>Best Practices </label><label id="ebwDesktopBP"></label></td>
+        <td><label>Best Practices </label><label id="ebwMobileBP"></label></td>
+        <td><label>Best Practices </label><label id="crdDesktopBP"></label></td>
+        <td><label>Best Practices </label><label id="crdMobileBP"></label></td>
+        <td><label>Best Practices </label><label id="kymDesktopBP"></label></td>
+        <td><label>Best Practices </label><label id="kymMobileBP"></label></td>
+    </tr>
+    <tr>
+        <td><label>SEO </label><label id="chzDesktopSEO"></label></td>
+        <td><label>SEO </label><label id="chzMobileSEO"></label></td>
+        <td><label>SEO </label><label id="ebwDesktopSEO"></label></td>
+        <td><label>SEO </label><label id="ebwMobileSEO"></label></td>
+        <td><label>SEO </label><label id="crdDesktopSEO"></label></td>
+        <td><label>SEO </label><label id="crdMobileSEO"></label></td>
+        <td><label>SEO </label><label id="kymDesktopSEO"></label></td>
+        <td><label>SEO </label><label id="kymMobileSEO"></label></td>
     </tr>
 </table>
-<!--New Code ends-->
-
-<!-- Container for the charts -->
-<div id="charts-container">
-    <!-- Chart 1 container -->
-    <div id="chart1-container">
-        <!-- Chart 1 will be drawn here -->
-    </div>
-    <!-- Chart 2 container -->
-    <div id="chart2-container">
-        <!-- Chart 2 will be drawn here -->
-    </div>
-    <!-- Add more chart containers if needed -->
-</div>
-
 <table id="summary">
     <tr id="CHZ-destination">
         <td>
@@ -189,5 +209,10 @@
         </td>
     </tr>
 </table>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="javascript/charts.js"></script>
+<script type="text/javascript" src="javascript/anchor.js"></script>
+<script type="text/javascript" src="javascript/data.js"></script>
+<script type="text/javascript" src="javascript/columns.js"></script>
 </body>
 </html>
