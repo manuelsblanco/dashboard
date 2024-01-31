@@ -1,8 +1,9 @@
 window.addEventListener('DOMContentLoaded', (event) => {
     const fileNames = ['chz.html', 'ebw.html', 'crd.html', 'kym.html'];
+    const basePath = 'pytest/'; // Ruta base donde se encuentran los archivos HTML
 
     Promise.all(fileNames.map(filename =>
-        fetch(filename).then(response => response.text())
+        fetch(basePath + filename).then(response => response.text())
     ))
         .then(dataArr => {
             google.charts.load('current', {'packages':['corechart']});
@@ -31,7 +32,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                 });
             });
 
-            function drawChart({numFailed, numPassed, numSkipped, numXfail,title}) {
+            function drawChart({numFailed, numPassed, numSkipped, numXfail, title}) {
                 const data = google.visualization.arrayToDataTable([
                     ['Result', 'Number of tests'],
                     ['Failed', numFailed],
