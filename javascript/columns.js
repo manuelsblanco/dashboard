@@ -1,3 +1,6 @@
+// Objeto global para almacenar los datos procesados
+var lighthouseData = {};
+
 function parseLighthouseData(json, prefix) {
   try {
     if (!json.categories || !json.categories.accessibility || !json.categories['best-practices'] || !json.categories.performance || !json.categories.seo) {
@@ -14,25 +17,78 @@ function parseLighthouseData(json, prefix) {
     const performance = performanceScore * 100;
     const seo = seoScore * 100;
 
-    // Check if the prefix indicates desktop or mobile
-    if (prefix.endsWith('Desktop')) {
-      // Write values to desktop HTML elements
-      document.getElementById(`${prefix}P`).textContent = performance.toFixed();
-      document.getElementById(`${prefix}A`).textContent = accessibility.toFixed();
-      document.getElementById(`${prefix}BP`).textContent = bestPractices.toFixed();
-      document.getElementById(`${prefix}SEO`).textContent = seo.toFixed();
-    } else if (prefix.endsWith('Mobile')) {
-      // Write values to mobile HTML elements
-      document.getElementById(`${prefix}P`).textContent = performance.toFixed();
-      document.getElementById(`${prefix}A`).textContent = accessibility.toFixed();
-      document.getElementById(`${prefix}BP`).textContent = bestPractices.toFixed();
-      document.getElementById(`${prefix}SEO`).textContent = seo.toFixed();
-    }
+    // Almacenar los datos procesados en el objeto global
+    lighthouseData[prefix] = { accessibility, bestPractices, performance, seo };
 
     return { accessibility, bestPractices, performance, seo };
   } catch (error) {
     console.error(`Error parsing Lighthouse data for prefix ${prefix}:`, error);
   }
+}
+
+function generateCharts() {
+  // Seleccionar el elemento canvas donde se renderizarán los gráficos
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  // Configuración de los datos para el gráfico
+  var data = {
+    labels: ['Accessibility', 'Best Practices', 'Performance', 'SEO'],
+    datasets: []
+  };
+
+  // Recorrer los datos almacenados en lighthouseData y agregarlos al conjunto de datos del gráfico
+  Object.keys(lighthouseData).forEach(prefix => {
+    var dataset = {
+      label: prefix,
+      backgroundColor: getRandomColor(), // Función para obtener un color aleatorio
+      data: [
+        lighthouseData[prefix].accessibility,
+        lighthouseData[prefix].bestPractices,
+        lighthouseData[prefix].performance,
+        lighthouseData[prefix].seo
+      ]
+    };
+    data.datasets.push(dataset);
+  });
+
+  // Configuración del gráfico
+  var options = {
+    scales: {
+      xAxes: [{
+        ticks: {
+          beginAtZero: true
+        }
+      }],
+      yAxes: [{
+        stacked: true
+      }]
+    }
+  };
+
+  // Crear el gráfico de barras horizontales
+  var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: data,
+    options: options
+  });
+
+  // Imprimir los gráficos en el HTML
+  Object.keys(lighthouseData).forEach(prefix => {
+    document.getElementById(prefix + 'Performance').textContent = lighthouseData[prefix].performance.toFixed();
+    document.getElementById(prefix + 'Accessibility').textContent = lighthouseData[prefix].accessibility.toFixed();
+    document.getElementById(prefix + 'BestPractices').textContent = lighthouseData[prefix].bestPractices.toFixed();
+    document.getElementById(prefix + 'SEO').textContent = lighthouseData[prefix].seo.toFixed();
+  });
+}
+
+// Función para obtener un color aleatorio
+function getRandomColor() {
+  var letters = '0123456789ABCDEF';
+  var color = '#';
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 function loadAndProcessJSON(filename, prefix) {
@@ -45,7 +101,8 @@ function loadAndProcessJSON(filename, prefix) {
       })
       .then(jsonData => {
         const parsedData = parseLighthouseData(jsonData, prefix);
-        // Additional processing if needed
+        // Llamar a la función para generar los gráficos después de procesar los datos de cada archivo JSON
+        generateCharts();
       })
       .catch(error => console.error(`Error fetching ${filename}:`, error));
 }
