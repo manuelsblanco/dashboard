@@ -1,178 +1,202 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <link rel="icon" href="https://literally.media/wp-content/uploads/2023/10/image-18.png" type="image/x-icon">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="style/style.css">
+        <meta charset="UTF-8">
+        <title>QA Automation</title>
+    </head>
+    <body>
+    <div class="centered-text">
+        <h1>🤖 QA Automation</h1>️
+    </div>
+    <br>
+    <table id="brands">
+        <tr>
+            <td><h3>Site</h3></td>
+            <td><h3>Site</h3></td>
+            <td><h3>Site</h3></td>
+            <td><h3>Site</h3></td>
+        </tr>
+        <tr>
+            <td>
+                <a href="pytest/chz.html">
+                    <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/cheez.png" alt="Cheezburger">
+                </a>
+            </td>
+            <td>
+                <a href="pytest/ebw.html">
+                    <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/eBaum.png" alt="eBaumsWorld">
+                </a>
+            </td>
+            <td>
+                <a href="pytest/crd.html">
+                    <img class="logo-image" src="https://ui-seo-1.crackedcdn.com/images/redesign/logo.svg?v=46b681b13255f32ec1ac0ac14e1e207d" alt="Cracked">
+                </a>
+            </td>
+            <td>
+                <a href="pytest/kym.html">
+                    <img class="logo-image" src="https://a-stg.kym-cdn.com/assets/kym-1a819de6a22989b0d8e0ff53fb52259b.jpg" alt="Know your meme">
+                </a>
+            </td>
+        </tr>
+        <tr id="results">
+            <td id="chz-results">
+                <h3>Tests Results</h3>
+            </td>
+            <td id="ebw-results">
+                <h3>Tests Results</h3>
+            </td>
+            <td id="crd-results">
+                <h3>Tests Results</h3>
+            </td>
+            <td id="kym-results">
+                <h3>Tests Results</h3>
+            </td>
+        </tr>
+    </table>
+    <!--New Code begins-->
+    <div id="div-lighthouse" class="centered-text logo-and-title">
+        <a href="#title-lighthouse" class="no-style">
+            <img id="lighthouse-logo" src="https://lh3.googleusercontent.com/JsGtt7BHEbHhQl5OzJikROL49WGoN0fBNcU_mvLRjWqx7nm7r7rzdG0DpET4qcK1FhNkFpcKf600G-Eoxx-_q3D4iA=s120" alt="Lighthouse Logo"/>
+        </a>
+        <a href="#title-lighthouse" class="no-style">
+            <span id="title-lighthouse">Lighthouse Automation Results</span>
+        </a>
+    </div>
+    <table id="lighthouse">
+        <tr>
+            <td colspan="2">
+                <div class="logo-lighthouse">
+                    <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/cheez.png" alt="Cheezburger">
+                </div>
+            </td>
+            <td colspan="2">
+                <div class="logo-lighthouse">
+                    <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/eBaum.png" alt="eBaumsWorld">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-chz-desktop.report.html">🖥</a></td>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-chz-mobile.report.html">📱</a></td>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-ebw-desktop.report.html">🖥</a></td>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-ebw-mobile.report.html">📱</a></td>
+        </tr>
+        <tr>
+            <td><div class="canvasContainer"><canvas id="chzDesktopCanvas"></canvas></div></td>
+            <td><div class="canvasContainer"><canvas id="chzMobileCanvas"></canvas></div></td>
+            <td><div class="canvasContainer"><canvas id="ebwDesktopCanvas"></canvas></div></td>
+            <td><div class="canvasContainer"><canvas id="ebwMobileCanvas"></canvas></div></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <div class="logo-lighthouse">
+                    <img class="logo-image" src="https://ui-seo-1.crackedcdn.com/images/redesign/logo.svg?v=46b681b13255f32ec1ac0ac14e1e207d" alt="Cracked">
+                </div>
+            </td>
+            <td colspan="2">
+                <div class="logo-lighthouse">
+                    <img class="logo-image" src="https://a-stg.kym-cdn.com/assets/kym-1a819de6a22989b0d8e0ff53fb52259b.jpg" alt="Know your meme">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-crd-desktop.report.html">🖥</a></td>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-crd-mobile.report.html">📱</a></td>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-kym-desktop.report.html">🖥</a></td>
+            <td><a class="no-style emoji-link" href="lighthouse/audit-kym-mobile.report.html">📱</a></td>
+        </tr>
+        <tr>
+            <td><div class="canvasContainer"><canvas id="crdDesktopCanvas"></canvas></div></td>
+            <td><div class="canvasContainer"><canvas id="crdMobileCanvas"></canvas></div></td>
+            <td><div class="canvasContainer"><canvas id="kymDesktopCanvas"></canvas></div></td>
+            <td><div class="canvasContainer"><canvas id="kymMobileCanvas"></canvas></div></td>
+        </tr>
+    </table>
+    <table id="summary">
+        <tr id="CHZ-destination">
+            <td>
+                <a href="pytest/chz.html">
+                    <img class="logo-results" src="https://literally.media/wp-content/uploads/2023/10/cheez.png" alt="Cheezburger">
+                </a>
+            <td>
+                <h3>Number of tests</h3>
+                <p><span id="totalTest-CHZ"></span></p>
+                <h3>Passed</h3>
+                <p class="passed"><span id="passed-CHZ"></span></p>
+                <h3>Failed</h3>
+                <p class="failed"><span id="failed-CHZ"></span></p>
+                <h3>Skipped</h3>
+                <p class="skipped"><span id="skipped-CHZ"></span></p>
+                <h3>XFailed</h3>
+                <p class="xfailed"><span id="xfailed-CHZ"></span></p>
+            </td>
+        </tr>
+        <tr id="EBW-destination">
+            <td>
+                <a href="pytest/ebw.html">
+                    <img class="logo-results" src="https://literally.media/wp-content/uploads/2023/10/eBaum.png" alt="eBaumsWorld">
+                </a>
+            </td>
+            <td>
+                <h3>Number of tests</h3>
+                <p><span id="totalTest-EBW"></span></p>
+                <h3>Passed</h3>
+                <p class="passed"><span id="passed-EBW"></span></p>
+                <h3>Failed</h3>
+                <p class="failed"><span id="failed-EBW"></span></p>
+                <h3>Skipped</h3>
+                <p class="skipped"><span id="skipped-EBW"></span></p>
+                <h3>XFailed</h3>
+                <p class="xfailed"><span id="xfailed-EBW"></span></p>
+            </td>
+        </tr>
+        <tr id="CRD-destination">
+            <td>
+                <a href="pytest/crd.html">
+                    <img class="logo-results" src="https://ui-seo-1.crackedcdn.com/images/redesign/logo.svg?v=46b681b13255f32ec1ac0ac14e1e207d" alt="Cracked">
+                </a>
+            </td>
+            <td>
+                <h3>Number of tests</h3>
+                <p><span id="totalTest-CRACKED"></span></p>
+                <h3>Passed</h3>
+                <p class="passed"><span id="passed-CRACKED"></span></p>
+                <h3>Failed</h3>
+                <p class="failed"><span id="failed-CRACKED"></span></p>
+                <h3>Skipped</h3>
+                <p class="skipped"><span id="skipped-CRACKED"></span></p>
+                <h3>XFailed</h3>
+                <p class="xfailed"><span id="xfailed-CRACKED"></span></p>
+            </td>
+        </tr>
+        <tr id="KYM-destination">
+            <td>
+                <a href="pytest/kym.html">
+                    <img class="logo-results" src="https://a-stg.kym-cdn.com/assets/kym-1a819de6a22989b0d8e0ff53fb52259b.jpg" alt="Know your meme">
+                </a>
+            </td>
+            <td>
+                <h3>Number of tests</h3>
+                <p><span id="totalTest-KYM"></span></p>
+                <h3>Passed</h3>
+                <p class="passed"><span id="passed-KYM"></span></p>
+                <h3>Failed</h3>
+                <p class="failed"><span id="failed-KYM"></span></p>
+                <h3>Skipped</h3>
+                <p class="skipped"><span id="skipped-KYM"></span></p>
+                <h3>XFailed</h3>
+                <p class="xfailed"><span id="xfailed-KYM"></span></p>
+            </td>
+        </tr>
+    </table>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript" src="javascript/charts.js"></script>
     <script type="text/javascript" src="javascript/anchor.js"></script>
     <script type="text/javascript" src="javascript/data.js"></script>
-    <link rel="stylesheet" type="text/css" href="style/style.css">
-    <meta charset="UTF-8">
-    <title>QA Automation</title>
-</head>
-<body>
-<div class="centered-text">
-    <h1>🤖 QA Automation</h1>️
-</div>
-<br>
-<table id="brands">
-    <tr>
-        <td><h3>Site</h3></td>
-        <td><h3>Site</h3></td>
-        <td><h3>Site</h3></td>
-        <td><h3>Site</h3></td>
-    </tr>
-    <tr>
-        <td>
-            <a href="chz.html">
-                <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/cheez.png" alt="Cheezburger">
-            </a>
-        </td>
-        <td>
-            <a href="ebw.html">
-                <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/eBaum.png" alt="eBaumsWorld">
-            </a>
-        </td>
-        <td>
-            <a href="crd.html">
-                <img class="logo-image" src="https://ui-seo-1.crackedcdn.com/images/redesign/logo.svg?v=46b681b13255f32ec1ac0ac14e1e207d" alt="Cracked">
-            </a>
-        </td>
-        <td>
-            <a href="kym.html">
-                <img class="logo-image" src="https://a-stg.kym-cdn.com/assets/kym-1a819de6a22989b0d8e0ff53fb52259b.jpg" alt="Know your meme">
-            </a>
-        </td>
-    </tr>
-    <tr id="results">
-        <td id="chz-results">
-            <h3>Tests Results</h3>
-        </td>
-        <td id="ebw-results">
-            <h3>Tests Results</h3>
-        </td>
-        <td id="crd-results">
-            <h3>Tests Results</h3>
-        </td>
-        <td id="kym-results">
-            <h3>Tests Results</h3>
-        </td>
-    </tr>
-</table>
-<!--New Code begins-->
-<div id="div-lighthouse" class="centered-text logo-and-title">
-    <a href="#title-lighthouse" class="no-style">
-        <img id="lighthouse-logo" src="https://lh3.googleusercontent.com/JsGtt7BHEbHhQl5OzJikROL49WGoN0fBNcU_mvLRjWqx7nm7r7rzdG0DpET4qcK1FhNkFpcKf600G-Eoxx-_q3D4iA=s120" alt="Lighthouse Logo"/>
-    </a>
-    <a href="#title-lighthouse" class="no-style">
-        <span id="title-lighthouse">Lighthouse Automation Results</span>
-    </a>
-</div>
-
-<table id="lighthouse">
-    <tr>
-        <td colspan="2">
-            <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/cheez.png" alt="Cheezburger">
-        </td>
-        <td colspan="2">
-            <img class="logo-image" src="https://literally.media/wp-content/uploads/2023/10/eBaum.png" alt="eBaumsWorld">
-        </td>
-        <td colspan="2">
-            <img class="logo-image" src="https://ui-seo-1.crackedcdn.com/images/redesign/logo.svg?v=46b681b13255f32ec1ac0ac14e1e207d" alt="Cracked">
-        </td>
-        <td colspan="2">
-            <img class="logo-image" src="https://a-stg.kym-cdn.com/assets/kym-1a819de6a22989b0d8e0ff53fb52259b.jpg" alt="Know your meme">
-        </td>
-    </tr>
-    <tr>
-        <td><a class="no-style emoji-link" href="audit-chz-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="audit-chz-mobile.html">📱</a></td>
-        <td><a class="no-style emoji-link" href="audit-ebw-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="audit-ebw-mobile.html">📱</a></td>
-        <td><a class="no-style emoji-link" href="audit-crd-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="audit-crd-mobile.html">📱</a></td>
-        <td><a class="no-style emoji-link" href="audit-kym-desktop.html">🖥</a></td>
-        <td><a class="no-style emoji-link" href="audit-kym-mobile.html">📱</a></td>
-    </tr>
-</table>
-<!--New Code ends-->
-<table id="summary">
-    <tr id="CHZ-destination">
-        <td>
-            <a href="chz.html">
-                <img class="logo-results" src="https://literally.media/wp-content/uploads/2023/10/cheez.png" alt="Cheezburger">
-            </a>
-        <td>
-            <h3>Number of tests</h3>
-            <p><span id="totalTest-CHZ"></span></p>
-            <h3>Passed</h3>
-            <p class="passed"><span id="passed-CHZ"></span></p>
-            <h3>Failed</h3>
-            <p class="failed"><span id="failed-CHZ"></span></p>
-            <h3>Skipped</h3>
-            <p class="skipped"><span id="skipped-CHZ"></span></p>
-            <h3>XFailed</h3>
-            <p class="xfailed"><span id="xfailed-CHZ"></span></p>
-        </td>
-    </tr>
-    <tr id="EBW-destination">
-        <td>
-            <a href="ebw.html">
-                <img class="logo-results" src="https://literally.media/wp-content/uploads/2023/10/eBaum.png" alt="eBaumsWorld">
-            </a>
-        </td>
-        <td>
-            <h3>Number of tests</h3>
-            <p><span id="totalTest-EBW"></span></p>
-            <h3>Passed</h3>
-            <p class="passed"><span id="passed-EBW"></span></p>
-            <h3>Failed</h3>
-            <p class="failed"><span id="failed-EBW"></span></p>
-            <h3>Skipped</h3>
-            <p class="skipped"><span id="skipped-EBW"></span></p>
-            <h3>XFailed</h3>
-            <p class="xfailed"><span id="xfailed-EBW"></span></p>
-        </td>
-    </tr>
-    <tr id="CRD-destination">
-        <td>
-            <a href="crd.html">
-                <img class="logo-results" src="https://ui-seo-1.crackedcdn.com/images/redesign/logo.svg?v=46b681b13255f32ec1ac0ac14e1e207d" alt="Cracked">
-            </a>
-        </td>
-        <td>
-            <h3>Number of tests</h3>
-            <p><span id="totalTest-CRACKED"></span></p>
-            <h3>Passed</h3>
-            <p class="passed"><span id="passed-CRACKED"></span></p>
-            <h3>Failed</h3>
-            <p class="failed"><span id="failed-CRACKED"></span></p>
-            <h3>Skipped</h3>
-            <p class="skipped"><span id="skipped-CRACKED"></span></p>
-            <h3>XFailed</h3>
-            <p class="xfailed"><span id="xfailed-CRACKED"></span></p>
-        </td>
-    </tr>
-    <tr id="KYM-destination">
-        <td>
-            <a href="kym.html">
-                <img class="logo-results" src="https://a-stg.kym-cdn.com/assets/kym-1a819de6a22989b0d8e0ff53fb52259b.jpg" alt="Know your meme">
-            </a>
-        </td>
-        <td>
-            <h3>Number of tests</h3>
-            <p><span id="totalTest-KYM"></span></p>
-            <h3>Passed</h3>
-            <p class="passed"><span id="passed-KYM"></span></p>
-            <h3>Failed</h3>
-            <p class="failed"><span id="failed-KYM"></span></p>
-            <h3>Skipped</h3>
-            <p class="skipped"><span id="skipped-KYM"></span></p>
-            <h3>XFailed</h3>
-            <p class="xfailed"><span id="xfailed-KYM"></span></p>
-        </td>
-    </tr>
-</table>
-</body>
-</html>
+    <script type="text/javascript" src="javascript/columns.js"></script>
+    </body>
+    </html>
