@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     ['Xfail', numXfail]
                 ]);
 
-                const options = {colors: ['#FF0000', '#178017', '#c2c238','#000000']};
+                const options = {colors: ['#f33', '#178017', '#fa3', '#000']};
 
                 const targetElement = document.getElementById(title + '-results');
                 const chartDiv = document.createElement('div');
