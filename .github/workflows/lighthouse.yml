@@ -1,5 +1,4 @@
 name: Lighthouse CI
-id: lighthouse_ci
 
 on:
   push:
