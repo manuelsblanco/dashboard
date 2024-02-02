@@ -1,9 +1,10 @@
 name: Update Files and Set Commit Time
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Lighthouse CI"]
+    types:
+      - completed
 
 jobs:
   set-commit-time:
