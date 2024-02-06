@@ -1,5 +1,5 @@
 from time import sleep
-
+from datetime import datetime
 import requests
 
 url_CHZ_JSON = 'https://cheezburger.github.io/literally-qa-automation-results/pytest/chz.json'
@@ -21,7 +21,10 @@ def obtain_report_date(url):
         data = response.json()
         if data:
             report_date = data.get("report", {}).get("created_at", "")
-            return report_date
+            if report_date:
+                dt = datetime.strptime(report_date, "%Y-%m-%d %H:%M:%S.%f")
+                formatted_date = dt.strftime("%m/%d/%Y %I:%M %p")
+                return formatted_date
 
 
 def obtain_report_performance(url):
@@ -69,11 +72,12 @@ def failed_details(url, site):
 
 
 while True:
-    sleep(600)
+    sleep(300)
     if date_EBW != obtain_report_date(url_EBW_JSON):
         date_EBW = obtain_report_date(url_EBW_JSON)
         failed_details(url_EBW_JSON, 'EBW')
 
+    sleep(300)
     if date_CHZ != obtain_report_date(url_CHZ_JSON):
         date_CHZ = obtain_report_date(url_CHZ_JSON)
         failed_details(url_CHZ_JSON, 'CHZ 🐱')
