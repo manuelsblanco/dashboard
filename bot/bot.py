@@ -8,6 +8,9 @@ date_EBW = ''
 date_CHZ = ''
 
 url_slack = 'https://hooks.slack.com/services/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'
+texto_enlace_ebaum = '[eBaum\'s World](https://cheezburger.github.io/literally-qa-automation-results/pytest/ebw.json)'
+texto_enlace_cheezburger = '[Cheezburger 🐱](https://cheezburger.github.io/literally-qa-automation-results/pytest/chz.json)'
+
 
 
 def bot_message(message):
@@ -75,10 +78,10 @@ while True:
     sleep(300)
     if date_EBW != obtain_report_date(url_EBW_JSON):
         date_EBW = obtain_report_date(url_EBW_JSON)
-        failed_details(url_EBW_JSON, 'EBW')
+        failed_details(url_EBW_JSON, texto_enlace_ebaum)
 
     sleep(300)
     if date_CHZ != obtain_report_date(url_CHZ_JSON):
         date_CHZ = obtain_report_date(url_CHZ_JSON)
-        failed_details(url_CHZ_JSON, 'CHZ 🐱')
+        failed_details(url_CHZ_JSON, texto_enlace_cheezburger)
 
