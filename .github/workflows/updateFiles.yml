@@ -29,7 +29,7 @@ jobs:
           git push -f
         continue-on-error: true
 
-  update-files:
+  update-files-chz:
     runs-on: ubuntu-latest
     needs: set-commit-time
 
@@ -37,35 +37,75 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Wait for Lighthouse CI completion
+      - name: Update chz.html File
         run: |
-          echo "Waiting for Lighthouse CI completion..."
+          file="pytest/chz.html"
+          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Cheezburger Results<\/p>/" $file
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add $file
+          git commit -m "Update Cheezburger Results [skip ci]"
+          git push -f
         continue-on-error: true
 
-      - name: Update HTML Files
+  update-files-crd:
+    runs-on: ubuntu-latest
+    needs: set-commit-time
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update crd.html File
         run: |
-          files=(
-            pytest/chz.html  
-            pytest/crd.html  
-            pytest/ebw.html 
-            pytest/kym.html  
-          )
+          file="pytest/crd.html"
+          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Cracked Results<\/p>/" $file
 
-          for file in "${files[@]}"; do
-            if [[ $file == *"chz.html"* ]]; then
-              sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Cheezburger Results<\/p>/" $file
-            elif [[ $file == *"crd.html"* ]]; then
-              sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Cracked Results<\/p>/" $file
-            elif [[ $file == *"ebw.html"* ]]; then
-              sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Ebaum's World Results<\/p>/" $file
-            elif [[ $file == *"kym.html"* ]]; then
-              sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Know your Meme Results<\/p>/" $file
-            fi
-
-            git config --global user.name 'GitHub Actions'
-            git config --global user.email 'actions@github.com'
-            git add $file
-            git commit -m "Update $file [skip ci]"
-            git push -f
-          done
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add $file
+          git commit -m "Update Cracked Results [skip ci]"
+          git push -f
         continue-on-error: true
+
+  update-files-ebw:
+    runs-on: ubuntu-latest
+    needs: set-commit-time
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update ebw.html File
+        run: |
+          file="pytest/ebw.html"
+          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Ebaum's World Results<\/p>/" $file
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add $file
+          git commit -m "Update Ebaum's World Results [skip ci]"
+          git push -f
+        continue-on-error: true
+
+  update-files-kym:
+    runs-on: ubuntu-latest
+    needs: set-commit-time
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update kym.html File
+        run: |
+          file="pytest/kym.html"
+          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Know your Meme Results<\/p>/" $file
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add $file
+          git commit -m "Update Know your Meme Results [skip ci]"
+          git push -f
+        continue-on-error: true
+
