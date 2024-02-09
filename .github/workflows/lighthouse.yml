@@ -39,7 +39,7 @@ jobs:
         continue-on-error: true
 
       - name: Run Lighthouse Audit - CRD Mobile
-        run: lighthouse https://www.cracked.com/ --output json,html --output-path=./lighthouse/audit-crd-mobile --form-factor mobile --form-factor mobile --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        run: lighthouse https://www.cracked.com/ --output json,html --output-path=./lighthouse/audit-crd-mobile --form-factor mobile --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
         continue-on-error: true
 
       - name: Run Lighthouse Audit - EBW Desktop
