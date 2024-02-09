@@ -47,7 +47,7 @@ jobs:
         continue-on-error: true
 
       - name: Run Lighthouse Audit - EBW Mobile
-        run: lighthouse https://www.ebaumsworld.com/ --output html,json --output-path=./lighthouse/audit-ebw-mobile --form-factor mobile --form-factor mobile --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        run: lighthouse https://www.ebaumsworld.com/ --output html,json --output-path=./lighthouse/audit-ebw-mobile --form-factor mobile --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
         continue-on-error: true
 
       - name: Run Lighthouse Audit - KYM Desktop
