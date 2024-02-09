@@ -3,7 +3,7 @@ name: Deploy static content to Pages
 
 on:
   workflow_run:
-    workflows: ["Lighthouse CI", "Update Files and Set Commit Time"]
+    workflows: ["Update Files and Set Commit Time"]
     types:
       - completed
 
