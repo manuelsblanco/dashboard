@@ -18,7 +18,7 @@ jobs:
         run: |
           current_content=$(cat index.html)
           current_date=$(date +'%m-%d-%Y %H:%M:%S')
-          new_content="<h1 style=\"text-align: center\">QA Automation</h1>\n<p id=\"date\">Test Results Date: $current_date</p>"
+          new_content="<div class=\"centered-text\">\n    <h1 style=\"text-align: center;\">🤖 QA Automation</h1>\n    <p id=\"date\">Test Results Date: $current_date</p>\n</div>"
           updated_content="${current_content/<div class=\"centered-text\">\n    <h1>🤖 QA Automation<\/h1>\n<\/div>/$new_content}"
           echo -e "$updated_content" > index.html  
 
