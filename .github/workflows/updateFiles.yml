@@ -16,6 +16,7 @@ jobs:
 
       - name: Set Commit Time
         run: |
+          ls -R
           if [ -f "../index.html" ]; then
             current_content=$(cat ../index.html)
             current_date=$(date +'%m-%d-%Y %H:%M:%S')
