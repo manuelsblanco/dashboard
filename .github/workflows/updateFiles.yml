@@ -36,7 +36,7 @@ jobs:
 
       - name: Update chz.html File
         run: |
-          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Cheezburger Results<\/p>/" pytest/chz.html
+          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Cheezburger Results<\/h1>/" pytest/chz.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
@@ -55,7 +55,7 @@ jobs:
 
       - name: Update crd.html File
         run: |
-          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Cracked Results<\/p>/" pytest/crd.html
+          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Cracked Results<\/h1>/" pytest/crd.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
@@ -74,7 +74,7 @@ jobs:
 
       - name: Update ebw.html File
         run: |
-          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Ebaum's World Results<\/p>/" pytest/ebw.html
+          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Ebaum's World Results<\/h1>/" pytest/ebw.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
@@ -93,7 +93,7 @@ jobs:
 
       - name: Update kym.html File
         run: |
-          sed -i "s/<p id=\"title\">.*<\/p>/<p id=\"title\">Know your Meme Results<\/p>/" pytest/kym.html
+          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Know your Meme Results<\/h1>/" pytest/kym.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
@@ -101,5 +101,3 @@ jobs:
           git commit -m "Update Know your Meme Results [skip ci]"
           git push -f
         continue-on-error: true
-
-
