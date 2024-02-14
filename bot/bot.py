@@ -8,8 +8,8 @@ date_EBW = ''
 date_CHZ = ''
 
 url_slack = 'https://hooks.slack.com/services/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'
-texto_enlace_ebaum = '[eBaum\'s World](https://cheezburger.github.io/literally-qa-automation-results/pytest/ebw.json)'
-texto_enlace_cheezburger = '[Cheezburger 🐱](https://cheezburger.github.io/literally-qa-automation-results/pytest/chz.json)'
+texto_enlace_ebaum = 'eBaum\'s World (https://cheezburger.github.io/literally-qa-automation-results/pytest/ebw.html)'
+texto_enlace_cheezburger = 'Cheezburger 🐱 (https://cheezburger.github.io/literally-qa-automation-results/pytest/chz.html)'
 
 
 
