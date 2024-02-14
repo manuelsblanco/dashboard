@@ -75,13 +75,19 @@ def failed_details(url, site):
 
 
 while True:
-    sleep(300)
-    if date_EBW != obtain_report_date(url_EBW_JSON):
-        date_EBW = obtain_report_date(url_EBW_JSON)
-        failed_details(url_EBW_JSON, texto_enlace_ebaum)
-
-    sleep(300)
-    if date_CHZ != obtain_report_date(url_CHZ_JSON):
-        date_CHZ = obtain_report_date(url_CHZ_JSON)
-        failed_details(url_CHZ_JSON, texto_enlace_cheezburger)
-
+    try:
+        sleep(300)
+        if date_EBW != obtain_report_date(url_EBW_JSON):
+            date_EBW = obtain_report_date(url_EBW_JSON)
+            failed_details(url_EBW_JSON, texto_enlace_ebaum)
+    except Exception as e:
+        bot_message(f"An error occurred while trying to obtain the eBaum's World report: {e}")
+        sleep(300)
+    try:
+        sleep(300)
+        if date_CHZ != obtain_report_date(url_CHZ_JSON):
+            date_CHZ = obtain_report_date(url_CHZ_JSON)
+            failed_details(url_CHZ_JSON, texto_enlace_cheezburger)
+    except Exception as e:
+        bot_message(f"An error occurred while trying to obtain the Cheezburger report: {e}")
+        sleep(300)
