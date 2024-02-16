@@ -63,14 +63,14 @@ jobs:
         with:
           name: lighthouse-results
           path: |
-            ./audit-chz-desktop.html
-            ./audit-chz-mobile.html
-            ./audit-crd-desktop.html
-            ./audit-crd-mobile.html
-            ./audit-ebw-desktop.html
-            ./audit-ebw-mobile.html
-            ./audit-kym-desktop.html
-            ./audit-kym-mobile.html
+            ./lighthouse/audit-chz-desktop.html
+            ./lighthouse/audit-chz-mobile.html
+            ./lighthouse/audit-crd-desktop.html
+            ./lighthouse/audit-crd-mobile.html
+            ./lighthouse/audit-ebw-desktop.html
+            ./lighthouse/audit-ebw-mobile.html
+            ./lighthouse/audit-kym-desktop.html
+            ./lighthouse/audit-kym-mobile.html
 
       - name: Commit and Push Results
         run: |
