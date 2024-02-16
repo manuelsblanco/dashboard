@@ -17,7 +17,7 @@ jobs:
       - name: Set Commit Time
         run: |
           current_date=$(date +'%m-%d-%Y %H:%M:%S')
-          sed -i "s/<p id=\"date\">.*<\/p>/<p id=\"date\">Test Results Date: $current_date<\/p>/" index.html
+          sed -i "" "s/<p id=\"date\">.*<\/p>/<p id=\"date\">Test Results Date: $current_date<\/p>/" index.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'

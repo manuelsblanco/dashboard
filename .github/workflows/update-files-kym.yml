@@ -16,7 +16,7 @@ jobs:
 
       - name: Update kym.html File
         run: |
-          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Know your Meme Results<\/h1>/" pytest/kym.html
+          sed -i "" "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Know your Meme Results<\/h1>/" pytest/kym.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'

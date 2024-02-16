@@ -16,7 +16,7 @@ jobs:
 
       - name: Update ebw.html File
         run: |
-          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Ebaum's World Results<\/h1>/" pytest/ebw.html
+          sed -i "" "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Ebaum's World Results<\/h1>/" pytest/ebw.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'

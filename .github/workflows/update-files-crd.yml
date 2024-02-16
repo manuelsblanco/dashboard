@@ -16,7 +16,7 @@ jobs:
 
       - name: Update crd.html File
         run: |
-          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Cracked Results<\/h1>/" pytest/crd.html
+          sed -i "" "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Cracked Results<\/h1>/" pytest/crd.html
 
           git config --global user.name 'GitHub Actions'
           git config --global user.email 'actions@github.com'
