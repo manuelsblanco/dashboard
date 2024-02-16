@@ -12,7 +12,6 @@ texto_enlace_ebaum = 'eBaum\'s World (https://cheezburger.github.io/literally-qa
 texto_enlace_cheezburger = 'Cheezburger 🐱 (https://cheezburger.github.io/literally-qa-automation-results/pytest/chz.html)'
 
 
-
 def bot_message(message):
     requests.post(url_slack, json={'text': message})
     print(message)
@@ -62,7 +61,8 @@ def failed_details(url, site):
             if tests:
                 failed_tests = [test for test in tests if test.get('outcome') == 'failed']
                 if failed_tests:
-                    bot_message(f"Failed Test Details: {len(failed_tests)} failed tests for {site} at {obtain_report_date(url)}")
+                    bot_message(
+                        f"Failed Test Details: {len(failed_tests)} failed tests for {site} at {obtain_report_date(url)}")
                     for test in failed_tests:
                         bot_message(f"Test Name: {test.get('name')}")
                         bot_message("--------------------")
