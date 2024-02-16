@@ -1,0 +1,26 @@
+name: Update Cracked Title
+
+on:
+  workflow_run:
+    workflows: ["Lighthouse CI"]
+    types:
+      - completed
+
+jobs:
+  update-files-crd:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Update crd.html File
+        run: |
+          sed -i "s/<h1 id=\"title\">.*<\/h1>/<h1 id=\"title\">Cracked Results<\/h1>/" pytest/crd.html
+
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add pytest/crd.html
+          git commit -m "Update Cracked Results [skip ci]"
+          git push -f
+        continue-on-error: true
