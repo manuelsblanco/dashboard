@@ -3,15 +3,15 @@ import os
 
 # Array de URLs
 urls = [
-    "https://knowyourmeme.com/photos?ab_test[split]=",
-    "https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans?ab_test[split]=",
-    "https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained?ab_test[split]=",
-    "https://knowyourmeme.com/memes/shroomjak-mushroom-wojak?ab_test[split]=",
-    "https://knowyourmeme.com?ab_test[split]=",
-    "https://knowyourmeme.com/news/widely-roasted-ai-animation-princess-jane-gets-a-sequel-gets-doubly-roasted?ab_test[split]=",
-    "https://knowyourmeme.com/search?context=&sort=&q=test&ab_test[split]=",
-    "https://knowyourmeme.com/memes/rickroll?ab_test[split]=",
-    "https://knowyourmeme.com/memes?ab_test[split]="
+    "https://knowyourmeme.com/photos",
+    "https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans",
+    "https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained",
+    "https://knowyourmeme.com/memes/shroomjak-mushroom-wojak",
+    "https://knowyourmeme.com",
+    "https://knowyourmeme.com/news/widely-roasted-ai-animation-princess-jane-gets-a-sequel-gets-doubly-roasted",
+    "https://knowyourmeme.com/search?context=&sort=&q=soccer",
+    "https://knowyourmeme.com/memes/rickroll",
+    "https://knowyourmeme.com/memes"
 ]
 
 # Directorio para guardar los resultados JSON
@@ -30,15 +30,26 @@ if not os.path.exists(output_directory):
     os.makedirs(output_directory)
 
 for url in urls:
-    # Prueba de escritorio
-    desktop_url = url + "redesign"
-    desktop_output_path = os.path.join(output_directory,
-                                       f"{desktop_url.replace('https://', '').replace('/', '_')}_desktop.json")
-    run_lighthouse(desktop_url, desktop_output_path)
+    # Prueba de escritorio - redesign
+    desktop_url_redesign = url + "?ab_test[split]=redesign"
+    desktop_output_path_redesign = os.path.join(output_directory,
+                                       f"{desktop_url_redesign.replace('https://', '').replace('/', '_')}_desktop_redesign.json")
+    run_lighthouse(desktop_url_redesign, desktop_output_path_redesign)
 
-    # Prueba móvil
-    mobile_url = url + "control"
-    mobile_output_path = os.path.join(output_directory,
-                                      f"{url.replace('https://', '').replace('/', '_')}_mobile.json")
-    run_lighthouse(mobile_url, mobile_output_path)
+    # Prueba de móvil - redesign
+    mobile_url_redesign = url + "?ab_test[split]=redesign"
+    mobile_output_path_redesign = os.path.join(output_directory,
+                                      f"{url.replace('https://', '').replace('/', '_')}_mobile_redesign.json")
+    run_lighthouse(mobile_url_redesign, mobile_output_path_redesign)
 
+    # Prueba de escritorio - control
+    desktop_url_control = url + "?ab_test[split]=control"
+    desktop_output_path_control = os.path.join(output_directory,
+                                       f"{desktop_url_control.replace('https://', '').replace('/', '_')}_desktop_control.json")
+    run_lighthouse(desktop_url_control, desktop_output_path_control)
+
+    # Prueba de móvil - control
+    mobile_url_control = url + "?ab_test[split]=control"
+    mobile_output_path_control = os.path.join(output_directory,
+                                      f"{url.replace('https://', '').replace('/', '_')}_mobile_control.json")
+    run_lighthouse(mobile_url_control, mobile_output_path_control)
