@@ -3,160 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="benchmark.css">
     <title>Performance Metrics</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
 </head>
 <body>
 
 <table id="performanceTable">
     <thead>
-        <tr>
-            <th>URL</th>
-            <th>Device</th>
-            <th>Category</th>
-            <th>First Contentful Paint</th>
-            <th>Largest Contentful Paint</th>
-            <th>Total Blocking Time</th>
-            <th>Cumulative Layout Shift</th>
-            <th>Speed Index</th>
-            <th>Performance</th>
-        </tr>
+    <tr>
+        <th>URL</th>
+        <th>Device</th>
+        <th>Category</th>
+        <th>First Contentful Paint</th>
+        <th>Largest Contentful Paint</th>
+        <th>Total Blocking Time</th>
+        <th>Cumulative Layout Shift</th>
+        <th>Speed Index</th>
+        <th>Performance</th>
+    </tr>
     </thead>
     <tbody>
-        <tr>
-            <td rowspan="4">knowyourmeme.com/photos</td>
-            <td rowspan="2">Desktop</td>
-            <td>control</td>
-            <td><label id="photos_c_fcp_desktop"></label></td>
-            <td><label id="photos_c_lcp_desktop"></label></td>
-            <td><label id="photos_c_tbt_desktop"></label></td>
-            <td><label id="photos_c_cls_desktop"></label></td>
-            <td><label id="photos_c_si_desktop"></label></td>
-            <td><label id="photos_c_per_desktop"></label></td>
-        </tr>
-        <tr>
-            <td>redesign</td>
-            <td><label id="photos_r_fcp_desktop"></label></td>
-            <td><label id="photos_r_lcp_desktop"></label></td>
-            <td><label id="photos_r_tbt_desktop"></label></td>
-            <td><label id="photos_r_cls_desktop"></label></td>
-            <td><label id="photos_r_si_desktop"></label></td>
-            <td><label id="photos_r_per_desktop"></label></td>
-        </tr>
-        <tr>
-            <td rowspan="2">Mobile</td>
-            <td>control</td>
-            <td><label id="photos_c_fcp_mobile"></label></td>
-            <td><label id="photos_c_lcp_mobile"></label></td>
-            <td><label id="photos_c_tbt_mobile"></label></td>
-            <td><label id="photos_c_cls_mobile"></label></td>
-            <td><label id="photos_c_si_mobile"></label></td>
-            <td><label id="photos_c_per_mobile"></label></td>
-        </tr>
-        <tr>
-            <td>redesign</td>
-            <td><label id="photos_r_fcp_mobile"></label></td>
-            <td><label id="photos_r_lcp_mobile"></label></td>
-            <td><label id="photos_r_tbt_mobile"></label></td>
-            <td><label id="photos_r_cls_mobile"></label></td>
-            <td><label id="photos_r_si_mobile"></label></td>
-            <td><label id="photos_r_per_mobile"></label></td>
-        </tr>
-        <tr>
-            <td rowspan="4">knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans</td>
-            <td rowspan="2">Desktop</td>
-            <td>control</td>
-            <td><label id="collections_c_fcp_desktop"></label></td>
-            <td><label id="collections_c_lcp_desktop"></label></td>
-            <td><label id="collections_c_tbt_desktop"></label></td>
-            <td><label id="collections_c_cls_desktop"></label></td>
-            <td><label id="collections_c_si_desktop"></label></td>
-            <td><label id="collections_c_per_desktop"></label></td>
-        </tr>
-        <tr>
-            <td>redesign</td>
-            <td><label id="collections_r_fcp_desktop"></label></td>
-            <td><label id="collections_r_lcp_desktop"></label></td>
-            <td><label id="collections_r_tbt_desktop"></label></td>
-            <td><label id="collections_r_cls_desktop"></label></td>
-            <td><label id="collections_r_si_desktop"></label></td>
-            <td><label id="collections_r_per_desktop"></label></td>
-        </tr>
-        <tr>
-            <td rowspan="2">Mobile</td>
-            <td>control</td>
-            <td><label id="collections_c_fcp_mobile"></label></td>
-            <td><label id="collections_c_lcp_mobile"></label></td>
-            <td><label id="collections_c_tbt_mobile"></label></td>
-            <td><label id="collections_c_cls_mobile"></label></td>
-            <td><label id="collections_c_si_mobile"></label></td>
-            <td><label id="collections_c_per_mobile"></label></td>
-        </tr>
-        <tr>
-            <td>redesign</td>
-            <td><label id="collections_r_fcp_mobile"></label></td>
-            <td><label id="collections_r_lcp_mobile"></label></td>
-            <td><label id="collections_r_tbt_mobile"></label></td>
-            <td><label id="collections_r_cls_mobile"></label></td>
-            <td><label id="collections_r_si_mobile"></label></td>
-            <td><label id="collections_r_per_mobile"></label></td>
-        </tr>
-        <tr>
-            <td rowspan="4">knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained</td>
-            <td rowspan="2">Desktop</td>
-            <td>control</td>
-            <td><label id="guides_c_fcp_desktop"></label></td>
-            <td><label id="guides_c_lcp_desktop"></label></td>
-            <td><label id="guides_c_tbt_desktop"></label></td>
-            <td><label id="guides_c_cls_desktop"></label></td>
-            <td><label id="guides_c_si_desktop"></label></td>
-            <td><label id="guides_c_per_desktop"></label></td>
-        </tr>
-        <tr>
-            <td>redesign</td>
-            <td><label id="guides_r_fcp_desktop"></label></td>
-            <td><label id="guides_r_lcp_desktop"></label></td>
-            <td><label id="guides_r_tbt_desktop"></label></td>
-            <td><label id="guides_r_cls_desktop"></label></td>
-            <td><label id="guides_r_si_desktop"></label></td>
-            <td><label id="guides_r_per_desktop"></label></td>
-        </tr>
-        <tr>
-            <td rowspan="2">Mobile</td>
-            <td>control</td>
-            <td><label id="guides_c_fcp_mobile"></label></td>
-            <td><label id="guides_c_lcp_mobile"></label></td>
-            <td><label id="guides_c_tbt_mobile"></label></td>
-            <td><label id="guides_c_cls_mobile"></label></td>
-            <td><label id="guides_c_si_mobile"></label></td>
-            <td><label id="guides_c_per_mobile"></label></td>
-        </tr>
-        <tr>
-            <td>redesign</td>
-            <td><label id="guides_r_fcp_mobile"></label></td>
-            <td><label id="guides_r_lcp_mobile"></label></td>
-            <td><label id="guides_r_tbt_mobile"></label></td>
-            <td><label id="guides_r_cls_mobile"></label></td>
-            <td><label id="guides_r_si_mobile"></label></td>
-            <td><label id="guides_r_per_mobile"></label></td>
-        </tr>
+    <tr>
+        <td rowspan="4">knowyourmeme.com/photos</td>
+        <td rowspan="2">🖥️</td>
+        <td><a href="">control</a></td>
+        <td><label id="photos_c_fcp_desktop"></label></td>
+        <td><label id="photos_c_lcp_desktop"></label></td>
+        <td><label id="photos_c_tbt_desktop"></label></td>
+        <td><label id="photos_c_cls_desktop"></label></td>
+        <td><label id="photos_c_si_desktop"></label></td>
+        <td><label id="photos_c_per_desktop"></label></td>
+    </tr>
+    <tr>
+
+        <td><a href="">redesign</a></td>
+        <td><label id="photos_r_fcp_desktop"></label></td>
+        <td><label id="photos_r_lcp_desktop"></label></td>
+        <td><label id="photos_r_tbt_desktop"></label></td>
+        <td><label id="photos_r_cls_desktop"></label></td>
+        <td><label id="photos_r_si_desktop"></label></td>
+        <td><label id="photos_r_per_desktop"></label></td>
+    </tr>
+    <tr>
+        <td rowspan="2">📱</td>
+        <td><a href="">control</a></td>
+        <td><label id="photos_c_fcp_mobile"></label></td>
+        <td><label id="photos_c_lcp_mobile"></label></td>
+        <td><label id="photos_c_tbt_mobile"></label></td>
+        <td><label id="photos_c_cls_mobile"></label></td>
+        <td><label id="photos_c_si_mobile"></label></td>
+        <td><label id="photos_c_per_mobile"></label></td>
+    </tr>
+    <tr>
+        <td><a href="">redesign</a></td>
+        <td><label id="photos_r_fcp_mobile"></label></td>
+        <td><label id="photos_r_lcp_mobile"></label></td>
+        <td><label id="photos_r_tbt_mobile"></label></td>
+        <td><label id="photos_r_cls_mobile"></label></td>
+        <td><label id="photos_r_si_mobile"></label></td>
+        <td><label id="photos_r_per_mobile"></label></td>
+    </tr>
+    <tr>
+        <td rowspan="4">knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans</td>
+        <td rowspan="2">🖥️</td>
+        <td><a href="">control</a></td>
+        <td><label id="collections_c_fcp_desktop"></label></td>
+        <td><label id="collections_c_lcp_desktop"></label></td>
+        <td><label id="collections_c_tbt_desktop"></label></td>
+        <td><label id="collections_c_cls_desktop"></label></td>
+        <td><label id="collections_c_si_desktop"></label></td>
+        <td><label id="collections_c_per_desktop"></label></td>
+    </tr>
+    <tr>
+        <td><a href="">redesign</a></td>
+        <td><label id="collections_r_fcp_desktop"></label></td>
+        <td><label id="collections_r_lcp_desktop"></label></td>
+        <td><label id="collections_r_tbt_desktop"></label></td>
+        <td><label id="collections_r_cls_desktop"></label></td>
+        <td><label id="collections_r_si_desktop"></label></td>
+        <td><label id="collections_r_per_desktop"></label></td>
+    </tr>
+    <tr>
+        <td rowspan="2">📱</td>
+        <td><a href="">control</a></td>
+        <td><label id="collections_c_fcp_mobile"></label></td>
+        <td><label id="collections_c_lcp_mobile"></label></td>
+        <td><label id="collections_c_tbt_mobile"></label></td>
+        <td><label id="collections_c_cls_mobile"></label></td>
+        <td><label id="collections_c_si_mobile"></label></td>
+        <td><label id="collections_c_per_mobile"></label></td>
+    </tr>
+    <tr>
+        <td><a href="">redesign</a></td>
+        <td><label id="collections_r_fcp_mobile"></label></td>
+        <td><label id="collections_r_lcp_mobile"></label></td>
+        <td><label id="collections_r_tbt_mobile"></label></td>
+        <td><label id="collections_r_cls_mobile"></label></td>
+        <td><label id="collections_r_si_mobile"></label></td>
+        <td><label id="collections_r_per_mobile"></label></td>
+    </tr>
+    <tr>
+        <td rowspan="4">knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained</td>
+        <td rowspan="2">🖥️</td>
+        <td><a href="">control</a></td>
+        <td><label id="guides_c_fcp_desktop"></label></td>
+        <td><label id="guides_c_lcp_desktop"></label></td>
+        <td><label id="guides_c_tbt_desktop"></label></td>
+        <td><label id="guides_c_cls_desktop"></label></td>
+        <td><label id="guides_c_si_desktop"></label></td>
+        <td><label id="guides_c_per_desktop"></label></td>
+    </tr>
+    <tr>
+        <td><a href="">redesign</a></td>
+        <td><label id="guides_r_fcp_desktop"></label></td>
+        <td><label id="guides_r_lcp_desktop"></label></td>
+        <td><label id="guides_r_tbt_desktop"></label></td>
+        <td><label id="guides_r_cls_desktop"></label></td>
+        <td><label id="guides_r_si_desktop"></label></td>
+        <td><label id="guides_r_per_desktop"></label></td>
+    </tr>
+    <tr>
+        <td rowspan="2">📱</td>
+        <td><a href="">control</a></td>
+        <td><label id="guides_c_fcp_mobile"></label></td>
+        <td><label id="guides_c_lcp_mobile"></label></td>
+        <td><label id="guides_c_tbt_mobile"></label></td>
+        <td><label id="guides_c_cls_mobile"></label></td>
+        <td><label id="guides_c_si_mobile"></label></td>
+        <td><label id="guides_c_per_mobile"></label></td>
+    </tr>
+    <tr>
+        <td><a href="">redesign</a></td>
+        <td><label id="guides_r_fcp_mobile"></label></td>
+        <td><label id="guides_r_lcp_mobile"></label></td>
+        <td><label id="guides_r_tbt_mobile"></label></td>
+        <td><label id="guides_r_cls_mobile"></label></td>
+        <td><label id="guides_r_si_mobile"></label></td>
+        <td><label id="guides_r_per_mobile"></label></td>
+    </tr>
     <tr>
         <td rowspan="4">knowyourmeme.com/memes/shroomjak-mushroom-wojak</td>
-        <td rowspan="2">Desktop</td>
-        <td>control</td>
+        <td rowspan="2">🖥️</td>
+        <td><a href="">control</a></td>
         <td><label id="memes_c_fcp_desktop"></label></td>
         <td><label id="memes_c_lcp_desktop"></label></td>
         <td><label id="memes_c_tbt_desktop"></label></td>
@@ -165,7 +153,7 @@
         <td><label id="memes_c_per_desktop"></label></td>
     </tr>
     <tr>
-        <td>redesign</td>
+        <td><a href="">redesign</a></td>
         <td><label id="memes_r_fcp_desktop"></label></td>
         <td><label id="memes_r_lcp_desktop"></label></td>
         <td><label id="memes_r_tbt_desktop"></label></td>
@@ -174,8 +162,8 @@
         <td><label id="memes_r_per_desktop"></label></td>
     </tr>
     <tr>
-        <td rowspan="2">Mobile</td>
-        <td>control</td>
+        <td rowspan="2">📱</td>
+        <td><a href="">control</a></td>
         <td><label id="memes_c_fcp_mobile"></label></td>
         <td><label id="memes_c_lcp_mobile"></label></td>
         <td><label id="memes_c_tbt_mobile"></label></td>
@@ -184,7 +172,7 @@
         <td><label id="memes_c_per_mobile"></label></td>
     </tr>
     <tr>
-        <td>redesign</td>
+        <td><a href="">redesign</a></td>
         <td><label id="memes_r_fcp_mobile"></label></td>
         <td><label id="memes_r_lcp_mobile"></label></td>
         <td><label id="memes_r_tbt_mobile"></label></td>
@@ -194,8 +182,8 @@
     </tr>
     <tr>
         <td rowspan="4">knowyourmeme.com</td>
-        <td rowspan="2">Desktop</td>
-        <td>control</td>
+        <td rowspan="2">🖥️</td>
+        <td><a href="">control</a></td>
         <td><label id="homepage_c_fcp_desktop"></label></td>
         <td><label id="homepage_c_lcp_desktop"></label></td>
         <td><label id="homepage_c_tbt_desktop"></label></td>
@@ -204,7 +192,7 @@
         <td><label id="homepage_c_per_desktop"></label></td>
     </tr>
     <tr>
-        <td>redesign</td>
+        <td><a href="">redesign</a></td>
         <td><label id="homepage_r_fcp_desktop"></label></td>
         <td><label id="homepage_r_lcp_desktop"></label></td>
         <td><label id="homepage_r_tbt_desktop"></label></td>
@@ -213,8 +201,8 @@
         <td><label id="homepage_r_per_desktop"></label></td>
     </tr>
     <tr>
-        <td rowspan="2">Mobile</td>
-        <td>control</td>
+        <td rowspan="2">📱</td>
+        <td><a href="">control</a></td>
         <td><label id="homepage_c_fcp_mobile"></label></td>
         <td><label id="homepage_c_lcp_mobile"></label></td>
         <td><label id="homepage_c_tbt_mobile"></label></td>
@@ -223,7 +211,7 @@
         <td><label id="homepage_c_per_mobile"></label></td>
     </tr>
     <tr>
-        <td>redesign</td>
+        <td><a href="">redesign</a></td>
         <td><label id="homepage_r_fcp_mobile"></label></td>
         <td><label id="homepage_r_lcp_mobile"></label></td>
         <td><label id="homepage_r_tbt_mobile"></label></td>
@@ -231,163 +219,8 @@
         <td><label id="homepage_r_si_mobile"></label></td>
         <td><label id="homepage_r_per_mobile"></label></td>
     </tr>
-    <tr>
-        <td rowspan="4">knowyourmeme.com/news/widely-roasted-ai-animation-princess-jane-gets-a-sequel-gets-doubly-roasted</td>
-        <td rowspan="2">Desktop</td>
-        <td>control</td>
-        <td><label id="news_c_fcp_desktop"></label></td>
-        <td><label id="news_c_lcp_desktop"></label></td>
-        <td><label id="news_c_tbt_desktop"></label></td>
-        <td><label id="news_c_cls_desktop"></label></td>
-        <td><label id="news_c_si_desktop"></label></td>
-        <td><label id="news_c_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="news_r_fcp_desktop"></label></td>
-        <td><label id="news_r_lcp_desktop"></label></td>
-        <td><label id="news_r_tbt_desktop"></label></td>
-        <td><label id="news_r_cls_desktop"></label></td>
-        <td><label id="news_r_si_desktop"></label></td>
-        <td><label id="news_r_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="2">Mobile</td>
-        <td>control</td>
-        <td><label id="news_c_fcp_mobile"></label></td>
-        <td><label id="news_c_lcp_mobile"></label></td>
-        <td><label id="news_c_tbt_mobile"></label></td>
-        <td><label id="news_c_cls_mobile"></label></td>
-        <td><label id="news_c_si_mobile"></label></td>
-        <td><label id="news_c_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="news_r_fcp_mobile"></label></td>
-        <td><label id="news_r_lcp_mobile"></label></td>
-        <td><label id="news_r_tbt_mobile"></label></td>
-        <td><label id="news_r_cls_mobile"></label></td>
-        <td><label id="news_r_si_mobile"></label></td>
-        <td><label id="news_r_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="4">knowyourmeme.com/search?context=&sort=&q=test</td>
-        <td rowspan="2">Desktop</td>
-        <td>control</td>
-        <td><label id="search_c_fcp_desktop"></label></td>
-        <td><label id="search_c_lcp_desktop"></label></td>
-        <td><label id="search_c_tbt_desktop"></label></td>
-        <td><label id="search_c_cls_desktop"></label></td>
-        <td><label id="search_c_si_desktop"></label></td>
-        <td><label id="search_c_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="search_r_fcp_desktop"></label></td>
-        <td><label id="search_r_lcp_desktop"></label></td>
-        <td><label id="search_r_tbt_desktop"></label></td>
-        <td><label id="search_r_cls_desktop"></label></td>
-        <td><label id="search_r_si_desktop"></label></td>
-        <td><label id="search_r_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="2">Mobile</td>
-        <td>control</td>
-        <td><label id="search_c_fcp_mobile"></label></td>
-        <td><label id="search_c_lcp_mobile"></label></td>
-        <td><label id="search_c_tbt_mobile"></label></td>
-        <td><label id="search_c_cls_mobile"></label></td>
-        <td><label id="search_c_si_mobile"></label></td>
-        <td><label id="search_c_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="search_r_fcp_mobile"></label></td>
-        <td><label id="search_r_lcp_mobile"></label></td>
-        <td><label id="search_r_tbt_mobile"></label></td>
-        <td><label id="search_r_cls_mobile"></label></td>
-        <td><label id="search_r_si_mobile"></label></td>
-        <td><label id="search_r_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="4">knowyourmeme.com/memes/rickroll</td>
-        <td rowspan="2">Desktop</td>
-        <td>control</td>
-        <td><label id="rickroll_c_fcp_desktop"></label></td>
-        <td><label id="rickroll_c_lcp_desktop"></label></td>
-        <td><label id="rickroll_c_tbt_desktop"></label></td>
-        <td><label id="rickroll_c_cls_desktop"></label></td>
-        <td><label id="rickroll_c_si_desktop"></label></td>
-        <td><label id="rickroll_c_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="rickroll_r_fcp_desktop"></label></td>
-        <td><label id="rickroll_r_lcp_desktop"></label></td>
-        <td><label id="rickroll_r_tbt_desktop"></label></td>
-        <td><label id="rickroll_r_cls_desktop"></label></td>
-        <td><label id="rickroll_r_si_desktop"></label></td>
-        <td><label id="rickroll_r_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="2">Mobile</td>
-        <td>control</td>
-        <td><label id="rickroll_c_fcp_mobile"></label></td>
-        <td><label id="rickroll_c_lcp_mobile"></label></td>
-        <td><label id="rickroll_c_tbt_mobile"></label></td>
-        <td><label id="rickroll_c_cls_mobile"></label></td>
-        <td><label id="rickroll_c_si_mobile"></label></td>
-        <td><label id="rickroll_c_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="rickroll_r_fcp_mobile"></label></td>
-        <td><label id="rickroll_r_lcp_mobile"></label></td>
-        <td><label id="rickroll_r_tbt_mobile"></label></td>
-        <td><label id="rickroll_r_cls_mobile"></label></td>
-        <td><label id="rickroll_r_si_mobile"></label></td>
-        <td><label id="rickroll_r_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="4">knowyourmeme.com/memes</td>
-        <td rowspan="2">Desktop</td>
-        <td>control</td>
-        <td><label id="memesAll_c_fcp_desktop"></label></td>
-        <td><label id="memesAll_c_lcp_desktop"></label></td>
-        <td><label id="memesAll_c_tbt_desktop"></label></td>
-        <td><label id="memesAll_c_cls_desktop"></label></td>
-        <td><label id="memesAll_c_si_desktop"></label></td>
-        <td><label id="memesAll_c_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="memesAll_r_fcp_desktop"></label></td>
-        <td><label id="memesAll_r_lcp_desktop"></label></td>
-        <td><label id="memesAll_r_tbt_desktop"></label></td>
-        <td><label id="memesAll_r_cls_desktop"></label></td>
-        <td><label id="memesAll_r_si_desktop"></label></td>
-        <td><label id="memesAll_r_per_desktop"></label></td>
-    </tr>
-    <tr>
-        <td rowspan="2">Mobile</td>
-        <td>control</td>
-        <td><label id="memesAll_c_fcp_mobile"></label></td>
-        <td><label id="memesAll_c_lcp_mobile"></label></td>
-        <td><label id="memesAll_c_tb    t_mobile"></label></td>
-        <td><label id="memesAll_c_cls_mobile"></label></td>
-        <td><label id="memesAll_c_si_mobile"></label></td>
-        <td><label id="memesAll_c_per_mobile"></label></td>
-    </tr>
-    <tr>
-        <td>redesign</td>
-        <td><label id="memesAll_r_fcp_mobile"></label></td>
-        <td><label id="memesAll_r_lcp_mobile"></label></td>
-        <td><label id="memesAll_r_tbt_mobile"></label></td>
-        <td><label id="memesAll_r_cls_mobile"></label></td>
-        <td><label id="memesAll_r_si_mobile"></label></td>
-        <td><label id="memesAll_r_per_mobile"></label></td>
-    </tr>
     </tbody>
 </table>
 </body>
+<script src="script.js"></script>
 </html>

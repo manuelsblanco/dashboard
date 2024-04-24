@@ -11,7 +11,6 @@ async function readJSONFile(filePath) {
   }
 }
 
-// JSON generado por Lighthouse
 const jsonFile = "knowyourmeme.com_desktop_control.json";
 const jsonFile2 = "knowyourmeme.com_desktop_redesign.json";
 const jsonFile3 = "knowyourmeme.com_mobile_control.json";
@@ -33,7 +32,6 @@ const jsonFile30 = "knowyourmeme.com_photos_desktop_redesign.json";
 const jsonFile31 = "knowyourmeme.com_photos_mobile_control.json";
 const jsonFile32 = "knowyourmeme.com_photos_mobile_redesign.json";
 
-// Leer el archivo JSON
 readJSONFile(jsonFile).then(jsonData => {
   if (jsonData) {
     document.getElementById("homepage_c_per_desktop").innerHTML = (jsonData.categories.performance.score * 100).toFixed(2);

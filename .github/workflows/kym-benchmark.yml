@@ -1,0 +1,142 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install Lighthouse and Chrome
+        run: |
+          sudo apt-get install -yq google-chrome-stable
+          npm install -g lighthouse@7.2.0
+
+      - name: Check Chrome Version
+        run: google-chrome-stable --version
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/photos Control Desktop
+        run: lighthouse https://knowyourmeme.com/photos --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_photos_desktop_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/photos Control Mobile
+        run: lighthouse https://knowyourmeme.com/photos --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_photos_mobile_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/photos Redesign Desktop
+        run: lighthouse https://knowyourmeme.com/photos?ab_test[split]=redesign --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_photos_desktop_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/photos Redesign Mobile
+        run: lighthouse https://knowyourmeme.com/photos?ab_test[split]=redesign --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_photos_mobile_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans Control Desktop
+        run: lighthouse https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans Control Mobile
+        run: lighthouse https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans Redesign Desktop
+        run: lighthouse https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans?ab_test[split]=redesign --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans Redesign Mobile
+        run: lighthouse https://knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans?ab_test[split]=redesign --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained Control Desktop
+        run: lighthouse https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained Control Mobile
+        run: lighthouse https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained Redesign Desktop
+        run: lighthouse https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained?ab_test[split]=redesign --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained Redesign Mobile
+        run: lighthouse https://knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained?ab_test[split]=redesign --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/memes/shroomjak-mushroom-wojak Control Desktop
+        run: lighthouse https://knowyourmeme.com/memes/shroomjak-mushroom-wojak --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/memes/shroomjak-mushroom-wojak Control Mobile
+        run: lighthouse https://knowyourmeme.com/memes/shroomjak-mushroom-wojak --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/memes/shroomjak-mushroom-wojak Redesign Desktop
+        run: lighthouse https://knowyourmeme.com/memes/shroomjak-mushroom-wojak?ab_test[split]=redesign --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com/memes/shroomjak-mushroom-wojak Redesign Mobile
+        run: lighthouse https://knowyourmeme.com/memes/shroomjak-mushroom-wojak?ab_test[split]=redesign --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com Control Desktop
+        run: lighthouse https://knowyourmeme.com --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_desktop_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com Control Mobile
+        run: lighthouse https://knowyourmeme.com --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_mobile_control --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com Redesign Desktop
+        run: lighthouse https://knowyourmeme.com?ab_test[split]=redesign --output json,html --preset=desktop --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_desktop_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Run Lighthouse Audit - https://knowyourmeme.com Redesign Mobile
+        run: lighthouse https://knowyourmeme.com?ab_test[split]=redesign --output json,html --form-factor mobile --output-path=./lighthouse/kym_benchmark/knowyourmeme.com_mobile_redesign --no-sandbox --chrome-flags="--headless" --max-wait-for-load=60000
+        continue-on-error: true
+
+      - name: Upload Lighthouse Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: lighthouse-results
+          path: |
+            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_desktop_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_mobile_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_desktop_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_mobile_control.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/knowyourmeme.com_mobile_redesign.report.html
+            
+
+      - name: Commit and Push Results
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Kym Redesign Benchmark today's automation results"
+          git push -f
