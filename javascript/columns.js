@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Reutiliza esta función para cada archivo JSON
 function loadAndProcessJSON(filename, prefix) {
-  fetch(`./lighthouse/${filename}`)
+  fetch(`./lighthouse/files/${filename}`)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Failed to fetch ${filename}: ${response.status} ${response.statusText}`);
