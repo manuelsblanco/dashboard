@@ -22,3 +22,7 @@ label {
     font-size: 1em;
     margin-bottom: 0.5em;
 }
+img {
+    max-width: 30%;
+    height: auto;
+}
