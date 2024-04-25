@@ -26,3 +26,7 @@ img {
     max-width: 30%;
     height: auto;
 }
+#logo {
+    background-color: #13133e;
+    text-align: center;
+}
