@@ -11,26 +11,26 @@ async function readJSONFile(filePath) {
   }
 }
 
-const jsonFile = "knowyourmeme.com_desktop_control.report.json";
-const jsonFile2 = "knowyourmeme.com_desktop_redesign.report.json";
-const jsonFile3 = "knowyourmeme.com_mobile_control.report.json";
-const jsonFile4 = "knowyourmeme.com_mobile_redesign.report.json";
-const jsonFile5 = "knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control.report.json";
-const jsonFile6 = "knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign.report.json";
-const jsonFile7 = "knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control.report.json";
-const jsonFile8 = "knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign.report.json";
-const jsonFile9 = "knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control.report.json";
-const jsonFile10 = "knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign.report.json";
-const jsonFile11 = "knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control.report.json";
-const jsonFile12 = "knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign.report.json";
-const jsonFile21 = "knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control.report.json";
-const jsonFile22 = "knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign.report.json";
-const jsonFile23 = "knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control.report.json";
-const jsonFile24 = "knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign.report.json";
-const jsonFile29 = "knowyourmeme.com_photos_desktop_control.report.json";
-const jsonFile30 = "knowyourmeme.com_photos_desktop_redesign.report.json";
-const jsonFile31 = "knowyourmeme.com_photos_mobile_control.report.json";
-const jsonFile32 = "knowyourmeme.com_photos_mobile_redesign.report.json";
+const jsonFile = "./files/knowyourmeme.com_desktop_control.report.json";
+const jsonFile2 = "./files/knowyourmeme.com_desktop_redesign.report.json";
+const jsonFile3 = "./files/knowyourmeme.com_mobile_control.report.json";
+const jsonFile4 = "./files/knowyourmeme.com_mobile_redesign.report.json";
+const jsonFile5 = "./files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control.report.json";
+const jsonFile6 = "./files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign.report.json";
+const jsonFile7 = "./files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control.report.json";
+const jsonFile8 = "./files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign.report.json";
+const jsonFile9 = "./files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control.report.json";
+const jsonFile10 = "./files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign.report.json";
+const jsonFile11 = "./files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control.report.json";
+const jsonFile12 = "./files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign.report.json";
+const jsonFile21 = "./files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control.report.json";
+const jsonFile22 = "./files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign.report.json";
+const jsonFile23 = "./files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control.report.json";
+const jsonFile24 = "./files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign.report.json";
+const jsonFile29 = "./files/knowyourmeme.com_photos_desktop_control.report.json";
+const jsonFile30 = "./files/knowyourmeme.com_photos_desktop_redesign.report.json";
+const jsonFile31 = "./files/knowyourmeme.com_photos_mobile_control.report.json";
+const jsonFile32 = "./files/knowyourmeme.com_photos_mobile_redesign.report.json";
 
 readJSONFile(jsonFile).then(jsonData => {
   if (jsonData) {

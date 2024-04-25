@@ -111,26 +111,26 @@ jobs:
         with:
           name: lighthouse-results
           path: |
-            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_desktop_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_mobile_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_desktop_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_photos_mobile_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_desktop_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_mobile_control.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_desktop_redesign.report.html
-            ./lighthouse/kym_benchmark/knowyourmeme.com_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_photos_desktop_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_photos_mobile_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_photos_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_photos_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_desktop_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_mobile_control.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_desktop_redesign.report.html
+            ./lighthouse/kym_benchmark/files/knowyourmeme.com_mobile_redesign.report.html
 
 
       - name: Commit and Push Results
