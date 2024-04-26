@@ -135,12 +135,12 @@
               ./lighthouse/kym_benchmark/files/knowyourmeme.com_mobile_redesign.report.html
   
 
-        - name: Commit and Push Results
-          with:
-            token: ${{ secrets.TOKEN }}
-          run: |
-            git config user.name "GitHub Actions"
-            git config user.email "actions@github.com"
-            git add .
-            git commit -m "Kym Redesign Benchmark today's automation results"
-            git push -f
+              - name: Commit and Push Results
+                  run: |
+                    git config user.name "GitHub Actions"
+                    git config user.email "actions@github.com"
+                    git add .
+                    git commit -m "Kym Redesign Benchmark today's automation results"
+                    git push -f
+                  env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
