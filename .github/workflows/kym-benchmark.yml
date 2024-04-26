@@ -136,6 +136,8 @@
   
 
         - name: Commit and Push Results
+          with:
+            token: ${{ secrets.TOKEN }}
           run: |
             git config user.name "GitHub Actions"
             git config user.email "actions@github.com"
