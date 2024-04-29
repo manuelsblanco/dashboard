@@ -23,7 +23,7 @@
                     const controlOffset = controlTds.length === 9 ? 3 : 2
                     const redesignOffset = 1
 
-                    for (let j = 0; j < 6; j++) {
+                    for (let j = 0; j < 5; j++) {
                         const controlTd = controlTds[controlOffset + j]
                         const redesignTd = redesignTds[redesignOffset + j]
 
@@ -43,6 +43,26 @@
                         }
                         redesignTd.style.background = color
                     }
+
+                    const j = 5;
+                    const controlTd = controlTds[controlOffset + j]
+                    const redesignTd = redesignTds[redesignOffset + j]
+
+                    const controlVal = parseFloat(controlTd.innerText)
+                    const redesignVal = parseFloat(redesignTd.innerText)
+
+                    let color = '#DF310C'
+
+                    if (redesignVal * 1.15 > controlVal) {
+                        color = 'yellow'
+                    }
+                    if (controlVal === redesignVal) {
+                        color = 'white'
+                    }
+                    if (redesignVal > controlVal) {
+                        color = 'green'
+                    }
+                    redesignTd.style.background = color
                 }
             }, 2000);
         })
