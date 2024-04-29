@@ -5,6 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="benchmark.css">
     <title>Performance Metrics</title>
+    <script>
+        window.addEventListener('load', () => {
+            (function() {
+                const rows = Array.from(document.getElementsByTagName('tr'));
+                const comparisons = []
+                for (let i = 1; i < rows.length; i+= 2) {
+                    comparisons[(i - 1)/2] = [rows[i], rows[i+1]]
+                }
+
+                for (const comparison of comparisons) {
+                    const control = comparison[0]
+                    const redesign = comparison[1]
+
+                    const controlTds = control.getElementsByTagName('td')
+                    const redesignTds = redesign.getElementsByTagName('td')
+                    const controlOffset = controlTds.length == 9 ? 3 : 2
+                    const redesignOffset = 1
+
+                    for (let j = 0; j < 6; j++) {
+                        const controlTd = controlTds[controlOffset + j]
+                        const redesignTd = redesignTds[redesignOffset + j]
+
+                        const controlVal = parseFloat(controlTd.innerText)
+                        const redesignVal = parseFloat(redesignTd.innerText)
+
+                        let color = 'red'
+
+                        if (controlVal * 1.15 > redesignVal) {
+                            color = 'yellow'
+                        }
+                        if (controlVal == redesignVal) {
+                            color = 'white'
+                        }
+                        if (controlVal > redesignVal) {
+                            color = 'green'
+                        }
+                        redesignTd.style.background = color
+                    }
+                }
+            })();
+        })
+    </script>
 </head>
 <body>
 <h1>Performance Metrics</h1>
