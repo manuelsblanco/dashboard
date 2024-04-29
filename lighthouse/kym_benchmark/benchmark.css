@@ -33,3 +33,7 @@ img {
 .gray {
     background-color: #b3abab;
 }
+.emoji {
+    text-align: center;
+    font-size: 1.5em;
+}
