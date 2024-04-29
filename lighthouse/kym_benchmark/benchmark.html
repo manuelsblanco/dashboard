@@ -7,7 +7,7 @@
     <title>Performance Metrics</title>
     <script>
         window.addEventListener('load', () => {
-            (function() {
+            setTimeout(() => {
                 const rows = Array.from(document.getElementsByTagName('tr'));
                 const comparisons = []
                 for (let i = 1; i < rows.length; i+= 2) {
@@ -44,7 +44,7 @@
                         redesignTd.style.background = color
                     }
                 }
-            })();
+            }, 2000);
         })
     </script>
 </head>
