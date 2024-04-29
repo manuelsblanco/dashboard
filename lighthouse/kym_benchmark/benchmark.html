@@ -20,7 +20,7 @@
 
                     const controlTds = control.getElementsByTagName('td')
                     const redesignTds = redesign.getElementsByTagName('td')
-                    const controlOffset = controlTds.length == 9 ? 3 : 2
+                    const controlOffset = controlTds.length === 9 ? 3 : 2
                     const redesignOffset = 1
 
                     for (let j = 0; j < 6; j++) {
@@ -30,12 +30,12 @@
                         const controlVal = parseFloat(controlTd.innerText)
                         const redesignVal = parseFloat(redesignTd.innerText)
 
-                        let color = 'red'
+                        let color = '#DF310C'
 
                         if (controlVal * 1.15 > redesignVal) {
                             color = 'yellow'
                         }
-                        if (controlVal == redesignVal) {
+                        if (controlVal === redesignVal) {
                             color = 'white'
                         }
                         if (controlVal > redesignVal) {
@@ -69,12 +69,12 @@
         <td rowspan="4">knowyourmeme.com/photos</td>
         <td rowspan="2">🖥️</td>
         <td><a href="files/knowyourmeme.com_photos_desktop_control.report.html">control</a></td>
-        <td><label id="photos_c_fcp_desktop"></label></td>
-        <td><label id="photos_c_lcp_desktop"></label></td>
-        <td><label id="photos_c_tbt_desktop"></label></td>
-        <td><label id="photos_c_cls_desktop"></label></td>
-        <td><label id="photos_c_si_desktop"></label></td>
-        <td><label id="photos_c_per_desktop"></label></td>
+        <td class="gray">  <label id="photos_c_fcp_desktop"></label></td>
+        <td class="gray">  <label id="photos_c_lcp_desktop"></label></td>
+        <td class="gray">  <label id="photos_c_tbt_desktop"></label></td>
+        <td class="gray">  <label id="photos_c_cls_desktop"></label></td>
+        <td class="gray"> <label id="photos_c_si_desktop"></label></td>
+        <td class="gray">  <label id="photos_c_per_desktop"></label></td>
     </tr>
     <tr>
 
@@ -89,12 +89,12 @@
     <tr>
         <td rowspan="2">📱</td>
         <td><a href="files/knowyourmeme.com_photos_mobile_control.report.html">control</a></td>
-        <td><label id="photos_c_fcp_mobile"></label></td>
-        <td><label id="photos_c_lcp_mobile"></label></td>
-        <td><label id="photos_c_tbt_mobile"></label></td>
-        <td><label id="photos_c_cls_mobile"></label></td>
-        <td><label id="photos_c_si_mobile"></label></td>
-        <td><label id="photos_c_per_mobile"></label></td>
+        <td class="gray"><label id="photos_c_fcp_mobile"></label></td>
+        <td class="gray"><label id="photos_c_lcp_mobile"></label></td>
+        <td class="gray"><label id="photos_c_tbt_mobile"></label></td>
+        <td class="gray"><label id="photos_c_cls_mobile"></label></td>
+        <td class="gray"><label id="photos_c_si_mobile"></label></td>
+        <td class="gray"><label id="photos_c_per_mobile"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_photos_mobile_redesign.report.html">redesign</a></td>
@@ -109,12 +109,12 @@
         <td rowspan="4">knowyourmeme.com/editorials/collections/15-adventure-time-memes-for-all-the-dedicated-fans</td>
         <td rowspan="2">🖥️</td>
         <td><a href="files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_control.report.html">control</a></td>
-        <td><label id="collections_c_fcp_desktop"></label></td>
-        <td><label id="collections_c_lcp_desktop"></label></td>
-        <td><label id="collections_c_tbt_desktop"></label></td>
-        <td><label id="collections_c_cls_desktop"></label></td>
-        <td><label id="collections_c_si_desktop"></label></td>
-        <td><label id="collections_c_per_desktop"></label></td>
+        <td class="gray"><label id="collections_c_fcp_desktop"></label></td>
+        <td class="gray"><label id="collections_c_lcp_desktop"></label></td>
+        <td class="gray"><label id="collections_c_tbt_desktop"></label></td>
+        <td class="gray"><label id="collections_c_cls_desktop"></label></td>
+        <td class="gray"><label id="collections_c_si_desktop"></label></td>
+        <td class="gray"><label id="collections_c_per_desktop"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_desktop_redesign.report.html">redesign</a></td>
@@ -128,12 +128,12 @@
     <tr>
         <td rowspan="2">📱</td>
         <td><a href="files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_control.report.html">control</a></td>
-        <td><label id="collections_c_fcp_mobile"></label></td>
-        <td><label id="collections_c_lcp_mobile"></label></td>
-        <td><label id="collections_c_tbt_mobile"></label></td>
-        <td><label id="collections_c_cls_mobile"></label></td>
-        <td><label id="collections_c_si_mobile"></label></td>
-        <td><label id="collections_c_per_mobile"></label></td>
+        <td class="gray"><label id="collections_c_fcp_mobile"></label></td>
+        <td class="gray"><label id="collections_c_lcp_mobile"></label></td>
+        <td class="gray"><label id="collections_c_tbt_mobile"></label></td>
+        <td class="gray"><label id="collections_c_cls_mobile"></label></td>
+        <td class="gray"><label id="collections_c_si_mobile"></label></td>
+        <td class="gray"><label id="collections_c_per_mobile"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_editorials_collections_15-adventure-time-memes-for-all-the-dedicated-fans_mobile_redesign.report.html">redesign</a></td>
@@ -148,12 +148,12 @@
         <td rowspan="4">knowyourmeme.com/editorials/guides/what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained</td>
         <td rowspan="2">🖥️</td>
         <td><a href="files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_control.report.html">control</a></td>
-        <td><label id="guides_c_fcp_desktop"></label></td>
-        <td><label id="guides_c_lcp_desktop"></label></td>
-        <td><label id="guides_c_tbt_desktop"></label></td>
-        <td><label id="guides_c_cls_desktop"></label></td>
-        <td><label id="guides_c_si_desktop"></label></td>
-        <td><label id="guides_c_per_desktop"></label></td>
+        <td class="gray"><label id="guides_c_fcp_desktop"></label></td>
+        <td class="gray"><label id="guides_c_lcp_desktop"></label></td>
+        <td class="gray"><label id="guides_c_tbt_desktop"></label></td>
+        <td class="gray"><label id="guides_c_cls_desktop"></label></td>
+        <td class="gray"><label id="guides_c_si_desktop"></label></td>
+        <td class="gray"><label id="guides_c_per_desktop"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_desktop_redesign.report.html">redesign</a></td>
@@ -167,12 +167,12 @@
     <tr>
         <td rowspan="2">📱</td>
         <td><a href="files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_control.report.html">control</a></td>
-        <td><label id="guides_c_fcp_mobile"></label></td>
-        <td><label id="guides_c_lcp_mobile"></label></td>
-        <td><label id="guides_c_tbt_mobile"></label></td>
-        <td><label id="guides_c_cls_mobile"></label></td>
-        <td><label id="guides_c_si_mobile"></label></td>
-        <td><label id="guides_c_per_mobile"></label></td>
+        <td class="gray"><label id="guides_c_fcp_mobile"></label></td>
+        <td class="gray"><label id="guides_c_lcp_mobile"></label></td>
+        <td class="gray"><label id="guides_c_tbt_mobile"></label></td>
+        <td class="gray"><label id="guides_c_cls_mobile"></label></td>
+        <td class="gray"><label id="guides_c_si_mobile"></label></td>
+        <td class="gray"><label id="guides_c_per_mobile"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_editorials_guides_what-does-nothing-ever-happens-mean-the-discourse-stagnation-meme-explained_mobile_redesign.report.html">redesign</a></td>
@@ -187,12 +187,12 @@
         <td rowspan="4">knowyourmeme.com/memes/shroomjak-mushroom-wojak</td>
         <td rowspan="2">🖥️</td>
         <td><a href="files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_control.report.html">control</a></td>
-        <td><label id="memes_c_fcp_desktop"></label></td>
-        <td><label id="memes_c_lcp_desktop"></label></td>
-        <td><label id="memes_c_tbt_desktop"></label></td>
-        <td><label id="memes_c_cls_desktop"></label></td>
-        <td><label id="memes_c_si_desktop"></label></td>
-        <td><label id="memes_c_per_desktop"></label></td>
+        <td class="gray"><label id="memes_c_fcp_desktop"></label></td>
+        <td class="gray"><label id="memes_c_lcp_desktop"></label></td>
+        <td class="gray"><label id="memes_c_tbt_desktop"></label></td>
+        <td class="gray"><label id="memes_c_cls_desktop"></label></td>
+        <td class="gray"><label id="memes_c_si_desktop"></label></td>
+        <td class="gray"><label id="memes_c_per_desktop"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_desktop_redesign.report.html">redesign</a></td>
@@ -206,12 +206,12 @@
     <tr>
         <td rowspan="2">📱</td>
         <td><a href="files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_control.report.html">control</a></td>
-        <td><label id="memes_c_fcp_mobile"></label></td>
-        <td><label id="memes_c_lcp_mobile"></label></td>
-        <td><label id="memes_c_tbt_mobile"></label></td>
-        <td><label id="memes_c_cls_mobile"></label></td>
-        <td><label id="memes_c_si_mobile"></label></td>
-        <td><label id="memes_c_per_mobile"></label></td>
+        <td class="gray"><label id="memes_c_fcp_mobile"></label></td>
+        <td class="gray"><label id="memes_c_lcp_mobile"></label></td>
+        <td class="gray"><label id="memes_c_tbt_mobile"></label></td>
+        <td class="gray"><label id="memes_c_cls_mobile"></label></td>
+        <td class="gray"><label id="memes_c_si_mobile"></label></td>
+        <td class="gray"><label id="memes_c_per_mobile"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_memes_shroomjak-mushroom-wojak_mobile_redesign.report.html">redesign</a></td>
@@ -226,12 +226,12 @@
         <td rowspan="4">knowyourmeme.com</td>
         <td rowspan="2">🖥️</td>
         <td><a href="files/knowyourmeme.com_desktop_control.report.html">control</a></td>
-        <td><label id="homepage_c_fcp_desktop"></label></td>
-        <td><label id="homepage_c_lcp_desktop"></label></td>
-        <td><label id="homepage_c_tbt_desktop"></label></td>
-        <td><label id="homepage_c_cls_desktop"></label></td>
-        <td><label id="homepage_c_si_desktop"></label></td>
-        <td><label id="homepage_c_per_desktop"></label></td>
+        <td class="gray"><label id="homepage_c_fcp_desktop"></label></td>
+        <td class="gray"><label id="homepage_c_lcp_desktop"></label></td>
+        <td class="gray"><label id="homepage_c_tbt_desktop"></label></td>
+        <td class="gray"><label id="homepage_c_cls_desktop"></label></td>
+        <td class="gray"><label id="homepage_c_si_desktop"></label></td>
+        <td class="gray"><label id="homepage_c_per_desktop"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_desktop_redesign.report.html">redesign</a></td>
@@ -245,12 +245,12 @@
     <tr>
         <td rowspan="2">📱</td>
         <td><a href="files/knowyourmeme.com_mobile_control.report.html">control</a></td>
-        <td><label id="homepage_c_fcp_mobile"></label></td>
-        <td><label id="homepage_c_lcp_mobile"></label></td>
-        <td><label id="homepage_c_tbt_mobile"></label></td>
-        <td><label id="homepage_c_cls_mobile"></label></td>
-        <td><label id="homepage_c_si_mobile"></label></td>
-        <td><label id="homepage_c_per_mobile"></label></td>
+        <td class="gray"><label id="homepage_c_fcp_mobile"></label></td>
+        <td class="gray"><label id="homepage_c_lcp_mobile"></label></td>
+        <td class="gray"><label id="homepage_c_tbt_mobile"></label></td>
+        <td class="gray"><label id="homepage_c_cls_mobile"></label></td>
+        <td class="gray"><label id="homepage_c_si_mobile"></label></td>
+        <td class="gray"><label id="homepage_c_per_mobile"></label></td>
     </tr>
     <tr>
         <td><a href="files/knowyourmeme.com_mobile_redesign.report.html">redesign</a></td>
