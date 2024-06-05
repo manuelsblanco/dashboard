@@ -17,7 +17,7 @@ def bot_message(message):
     print(message)
 
 
-def obtain_report_date(url):
+def obtain_report_date(url):    
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
