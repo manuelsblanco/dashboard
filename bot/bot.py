@@ -68,10 +68,13 @@ def failed_details(url, site):
                         bot_message("--------------------")
                 else:
                     bot_message(f"🤖 Congratulations all the test passed for {site} at {obtain_report_date(url)}")
+                    print(f"🤖 Congratulations all the test passed for {site} at {obtain_report_date(url)}")
             else:
                 bot_message("No tests found in the report 🤔.")
+                print("No tests found in the report 🤔.")
         else:
             bot_message("Data not found in the JSON report 😳")
+            print("Data not found in the JSON report 😳")
 
 
 while True:
@@ -82,12 +85,14 @@ while True:
             failed_details(url_EBW_JSON, texto_enlace_ebaum)
     except Exception as e:
         bot_message(f"An error occurred while trying to obtain the eBaum's World report: {e}")
+        print(f"An error occurred while trying to obtain the eBaum's World report: {e}")
         sleep(300)
     try:
-        sleep(300)
+        # sleep(300)
         if date_CHZ != obtain_report_date(url_CHZ_JSON):
             date_CHZ = obtain_report_date(url_CHZ_JSON)
             failed_details(url_CHZ_JSON, texto_enlace_cheezburger)
     except Exception as e:
         bot_message(f"An error occurred while trying to obtain the Cheezburger report: {e}")
+        print(f"An error occurred while trying to obtain the Cheezburger report: {e}")
         sleep(300)
