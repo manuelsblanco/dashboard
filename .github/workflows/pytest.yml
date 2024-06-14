@@ -1,0 +1,41 @@
+name: pytest.yml
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Tests
+        run: pytest tests2/ebw/pages/ --html=./pytest/assets/ebw.html --json=./pytest/assets/ebw.json --self-contained-html
+
+      - name: Upload Test Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: pytest-results
+          path: |
+            ./pytest/assets/ebw.html
+            ./pytest/assets/ebw.json
+
+      - name: Commit Test Results
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Lighthouse today's automation results"
+          git push

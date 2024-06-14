@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             function drawChart({numFailed, numPassed, numSkipped, numXfail, title}) {
                 const data = google.visualization.arrayToDataTable([
-                    ['Result', 'Number of tests'],
+                    ['Result', 'Number of tests2'],
                     ['Failed', numFailed],
                     ['Passed', numPassed],
                     ['Skipped', numSkipped],

@@ -45,7 +45,7 @@ def obtain_report_performance(url):
                     failed_percentage = round((failed / total_tests) * 100, 2)
                     bot_message(f"Effectivity of Test Audit: {100 - failed_percentage}%")
                 else:
-                    bot_message("No tests run.")
+                    bot_message("No tests2 run.")
             else:
                 bot_message("Summary not found in the JSON report")
         else:
@@ -57,12 +57,12 @@ def failed_details(url, site):
     if response.status_code == 200:
         data = response.json()
         if data:
-            tests = data.get("report", {}).get("tests", [])
+            tests = data.get("report", {}).get("tests2", [])
             if tests:
                 failed_tests = [test for test in tests if test.get('outcome') == 'failed']
                 if failed_tests:
                     bot_message(
-                        f"Failed Test Details: {len(failed_tests)} failed tests for {site} at {obtain_report_date(url)}")
+                        f"Failed Test Details: {len(failed_tests)} failed tests2 for {site} at {obtain_report_date(url)}")
                     for test in failed_tests:
                         bot_message(f"Test Name: {test.get('name')}")
                         bot_message("--------------------")
@@ -70,8 +70,8 @@ def failed_details(url, site):
                     bot_message(f"🤖 Congratulations all the test passed for {site} at {obtain_report_date(url)}")
                     print(f"🤖 Congratulations all the test passed for {site} at {obtain_report_date(url)}")
             else:
-                bot_message("No tests found in the report 🤔.")
-                print("No tests found in the report 🤔.")
+                bot_message("No tests2 found in the report 🤔.")
+                print("No tests2 found in the report 🤔.")
         else:
             bot_message("Data not found in the JSON report 😳")
             print("Data not found in the JSON report 😳")
